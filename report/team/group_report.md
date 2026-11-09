@@ -160,12 +160,12 @@ Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người*
 
 | Trường | Nội dung |
 |---|---|
-| **Actor** | |
-| **Quy trình** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** (baseline → target, cách đo) | |
-| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | |
+| **Actor** | QA Tester trực tiếp kiểm thử chức năng game, phát hiện và xác minh các bug không xuất hiện ổn định. Developer hỗ trợ phân tích khi cần. |
+| **Quy trình** | 1. Thực hiện thao tác kiểm thử.<br>2. Phát hiện bug.<br>3. Thử thực hiện lại các thao tác trước đó.<br>4. Thay đổi điều kiện kiểm thử như trạng thái game, thao tác, thời điểm hoặc dữ liệu.<br>5. Ghi nhận kết quả từng lần thử.<br>6. Báo cáo bug nếu tái hiện được. |
+| **Bottleneck** | Bước 4: Thay đổi điều kiện kiểm thử. Một số bug khó tái hiện có thể mất 40 phút.  |
+| **Impact** | Tốn thời gian kiểm thử, làm chậm quá trình xác minh và báo cáo bug. Nếu không tái hiện được, QA có thể không cung cấp đủ thông tin để Developer xác định nguyên nhân và sửa lỗi. |
+| **Success Metric** (baseline → target, cách đo) |  Giảm 30% thời gian trung bình để tái hiện một bug. Ghi lại thời gian từ lúc bắt đầu xác minh bug đến khi tái hiện thành công hoặc kết thúc quá trình thử; so sánh trước và sau pilot trên các bug tương tự. |
+| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) |AI Không tự kết luận nguyên nhân bug khi chưa đủ bằng chứng; không tự thay đổi dữ liệu hoặc trạng thái game; không tự đóng ticket hoặc xác nhận bug đã được sửa. QA phải kiểm tra và xác nhận các điều kiện tái hiện được đề xuất trước khi báo cáo Developer. |
 
 Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
 
