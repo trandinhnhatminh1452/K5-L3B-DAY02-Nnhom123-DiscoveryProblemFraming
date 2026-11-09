@@ -59,14 +59,22 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 Quy trình nháp hiện tại:
 
-```
-HIỆN TẠI — ước tính 1–2 tiếng
+```mermaid
+flowchart TD
+    A["1. Nhận yêu cầu kiểm thử sự kiện<br/>5–10 phút"]
+    B["2. Đọc tài liệu và checklist<br/>15–20 phút"]
+    C["3. Tìm lại bug liên quan đến sự kiện ở các phiên bản trước<br/>30–45 phút"]
+    D["4. Đối chiếu bug cũ với phiên bản hiện tại<br/>45–60 phút<br/>⚠️ BOTTLENECK"]
+    E["5. Thực hiện kiểm thử<br/>90–120 phút"]
+    F["6. Ghi nhận và báo cáo bug mới<br/>15–25 phút"]
 
-HIỆN TẠI — ước tính 3–4 tiếng
+    A --> B --> C --> D --> E --> F
 
-[1 Nhận yêu cầu kiểm thử sự kiện: 5–10'] → [2 Đọc tài liệu và checklist: 15–20'] → [3 Tìm lại bug liên quan đến sự kiện ở các phiên bản trước: 30–45'] → [4 Đối chiếu bug cũ với phiên bản hiện tại: 45–60'] ← BOTTLENECK
-→ [5 Thực hiện kiểm thử: 90–120'] → [6 Ghi nhận và báo cáo bug mới: 15–25']
+    classDef normal fill:#E8F1FC,stroke:#3973AC,color:#1F2937
+    classDef bottleneck fill:#FEE2E2,stroke:#DC2626,stroke-width:3px,color:#991B1B
 
+    class A,B,C,E,F normal
+    class D bottleneck
 ```
 
 ### Problem Card #2
