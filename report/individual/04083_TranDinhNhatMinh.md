@@ -9,8 +9,8 @@
 - Họ tên: Trần Đình Nhật Minh
 - MSSV: 2A202604083
 - Email trường (không bắt buộc, repo có thể để public):
-- Tên nhóm:
-- Link repo nhóm:
+- Tên nhóm: Nnhom123
+- Link repo nhóm: https://github.com/trandinhnhatminh1452/K5-L3B-DAY02-Nnhom123-DiscoveryProblemFraming.git
 
 ---
 
