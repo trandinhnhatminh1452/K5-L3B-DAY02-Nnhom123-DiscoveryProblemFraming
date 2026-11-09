@@ -20,7 +20,7 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | # | Lăng kính | Job Story: Khi… tôi muốn… để… | Ai chịu ảnh hưởng? | Dấu hiệu thật (thời gian, tần suất, số người, bằng chứng) |
 |---:|---|---|---|---|
-| 1 |Lặp lại |Khi kiểm thử một sự kiện được mở hàng tháng trong game, tôi muốn tra cứu các bug từng xuất hiện ở những phiên bản trước, để tránh bỏ sót những lỗi tương tự. | QA Tester, QA Leader|1-2 tháng một lần, mỗi lần 4-6 tiếng |
+| 1 |Lặp lại |Khi kiểm thử một sự kiện được mở hàng tháng trong game, tôi muốn tra cứu các bug từng xuất hiện ở những phiên bản trước, để tránh bỏ sót những lỗi tương tự. | QA Tester, QA Leader|1-2 tháng một lần, mỗi lần 3-4 tiếng |
 | 2 |Tốn thời gian |Khi phát hiện một bug chỉ xuất hiện trong điều kiện nhất định, tôi muốn xác định được điều kiện tái hiện lỗi, để không phải thử đi thử lại nhiều lần.|QA Tester, Developer |Mỗi lần thử mất khoảng 10p cho từng trường hợp, những bug nó chỉ diễn ra ngẫu nhiên trong một trường hợp cố định phải mất 15-20 phút để có thể tái  |
 | 3 |Tốn thời gian |Khi kiểm tra một checklist dài, tôi muốn biết chính xác những mục đã kiểm tra và chưa kiểm tra, để tránh mất thời gian rà soát lại nhiều lần. |QA Tester |Một checklist có khoảng 50–100 mục; mất thêm 10–15 phút rà soát trạng thái trước khi kết thúc kiểm thử. |
 | 4 |Cần đọc, tổng hợp nhiều thông tin |Khi nhận một tính năng mới để kiểm thử, tôi muốn nắm được các yêu cầu và thay đổi so với phiên bản trước, để xác định chính xác phạm vi cần kiểm tra. |QA Tester, Developer |mất khoảng 15–20 phút đọc khoảng các nguồn thông tin như tài liệu, ticket và trao đổi trong nhóm. |
@@ -46,20 +46,26 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | Trường | Nội dung |
 |---|---|
-| Job Story | Khi …, tôi muốn …, để … |
-| Actor | |
-| Thời điểm / bối cảnh | |
-| Quy trình hiện tại (3–7 bước) | |
-| Bottleneck (bước nào, mất bao nhiêu phút) | |
-| Impact (nếu không giải thì sao) | |
-| Success metric (baseline → target) | |
-| Phương án không dùng AI | |
-| Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | No AI / Rule / Workflow / Agent / Chưa biết |
+| Job Story | Khi kiểm thử một sự kiện được mở lại hàng tháng, tôi muốn tra cứu các bug từng xuất hiện ở những phiên bản trước, để tránh bỏ sót lỗi tương tự. |
+| Actor | QA Tester. |
+| Thời điểm / bối cảnh | Khi sự kiện được mở lại, khoảng 1–2 tháng/lần. |
+| Quy trình hiện tại (3–7 bước) | 1. Nhận yêu cầu kiểm thử sự kiện.<br>2. Đọc tài liệu và checklist.<br>3. Tìm lại bug liên quan đến sự kiện ở các phiên bản trước.<br>4. Đối chiếu bug cũ với phiên bản hiện tại.<br>5. Thực hiện kiểm thử.<br>6. Ghi nhận và báo cáo bug mới. |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 3–4: Tìm kiếm và đối chiếu bug cũ. Chưa có số liệu đo riêng; tổng thời gian kiểm thử toàn bộ sự kiện khoảng 3–4 tiếng. |
+| Impact (nếu không giải thì sao) | Có thể bỏ sót lỗi đã từng xuất hiện, mất thời gian tìm lại thông tin và kiểm thử lại những trường hợp không cần thiết. |
+| Success metric (baseline → target) | Giảm thời gian tìm kiếm và kiểm thử xuống 30-40%. |
+| Phương án không dùng AI | Chuẩn hóa cách đặt tên bug, gắn tag theo sự kiện, xây dựng danh sách bug cũ và bộ lọc tìm kiếm. |
+| Giả thuyết về AI (nếu có) | AI có thể tìm các bug có nội dung tương tự dù cách mô tả khác nhau, sau đó gợi ý những bug QA cần chú ý. |
+| Cảm nhận nhanh | Workflow / Có thể cần AI hỗ trợ tìm kiếm ngữ nghĩa. |
 
 Quy trình nháp hiện tại:
 
-```text
+```
+HIỆN TẠI — ước tính 1–2 tiếng
+
+HIỆN TẠI — ước tính 3–4 tiếng
+
+[1 Nhận yêu cầu kiểm thử sự kiện: 5–10'] → [2 Đọc tài liệu và checklist: 15–20'] → [3 Tìm lại bug liên quan đến sự kiện ở các phiên bản trước: 30–45'] → [4 Đối chiếu bug cũ với phiên bản hiện tại: 45–60'] ← BOTTLENECK
+→ [5 Thực hiện kiểm thử: 90–120'] → [6 Ghi nhận và báo cáo bug mới: 15–25']
 
 ```
 
@@ -67,20 +73,24 @@ Quy trình nháp hiện tại:
 
 | Trường | Nội dung |
 |---|---|
-| Job Story | Khi …, tôi muốn …, để … |
-| Actor | |
-| Thời điểm / bối cảnh | |
-| Quy trình hiện tại (3–7 bước) | |
-| Bottleneck (bước nào, mất bao nhiêu phút) | |
-| Impact (nếu không giải thì sao) | |
-| Success metric (baseline → target) | |
-| Phương án không dùng AI | |
-| Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | No AI / Rule / Workflow / Agent / Chưa biết |
+| Job Story | Khi phát hiện một bug chỉ xuất hiện trong một số điều kiện nhất định, tôi muốn xác định được các điều kiện tái hiện lỗi, để không phải thử đi thử lại nhiều lần. |
+| Actor | QA Tester phát hiện và xác minh bug; Developer hỗ trợ phân tích khi cần. |
+| Thời điểm / bối cảnh | Khi kiểm thử chức năng và gặp lỗi không xuất hiện ổn định sau mỗi lần thực hiện thao tác. |
+| Quy trình hiện tại (3–7 bước) | 1. Thực hiện thao tác kiểm thử.<br>2. Phát hiện bug.<br>3. Thử thực hiện lại các thao tác trước đó.<br>4. Thay đổi điều kiện kiểm thử như trạng thái game, thao tác, thời điểm hoặc dữ liệu.<br>5. Ghi nhận kết quả từng lần thử.<br>6. Báo cáo bug nếu tái hiện được. |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 4: Thay đổi điều kiện kiểm thử. Một số bug khó tái hiện có thể mất 40 phút. |
+| Impact (nếu không giải thì sao) | Tốn thời gian kiểm thử, chậm xác minh bug và có thể không cung cấp đủ thông tin để Developer sửa lỗi. |
+| Success metric (baseline → target) | Thời gian trung bình để tái hiện một bug giảm 30%, tìm ra phương án tái hiện tốt . |
+| Phương án không dùng AI | Lập checklist điều kiện kiểm thử, ghi lại log, thao tác, trạng thái game và kết quả từng lần thử. |
+| Giả thuyết về AI (nếu có) | AI có thể phân tích lịch sử thử nghiệm và log để gợi ý những điều kiện có khả năng gây ra bug. |
+| Cảm nhận nhanh | Workflow |
 
 Quy trình nháp hiện tại:
 
-```text
+```
+HIỆN TẠI — ước tính 90 phút
+
+[1 Thực hiện thao tác kiểm thử: 10'] → [2 Phát hiện bug: 5'] → [3 Thử thực hiện lại các thao tác trước đó: 15'] → [4 Thay đổi điều kiện kiểm thử như trạng thái game, thao tác, thời điểm hoặc dữ liệu: 40'] ← BOTTLENECK
+→ [5 Ghi nhận kết quả từng lần thử: 10'] → [6 Báo cáo bug nếu tái hiện được: 10']
 
 ```
 
@@ -88,35 +98,39 @@ Quy trình nháp hiện tại:
 
 | Trường | Nội dung |
 |---|---|
-| Job Story | Khi …, tôi muốn …, để … |
-| Actor | |
-| Thời điểm / bối cảnh | |
-| Quy trình hiện tại (3–7 bước) | |
-| Bottleneck (bước nào, mất bao nhiêu phút) | |
-| Impact (nếu không giải thì sao) | |
-| Success metric (baseline → target) | |
-| Phương án không dùng AI | |
-| Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | No AI / Rule / Workflow / Agent / Chưa biết |
+| Job Story | Khi Developer thông báo đã sửa bug, tôi muốn biết chính xác những nội dung đã thay đổi, để xác định các khu vực cần kiểm thử lại. |
+| Actor | QA Tester thực hiện retest và Developer phụ trách sửa bug. |
+| Thời điểm / bối cảnh | Khi Developer chuyển trạng thái bug sang đã sửa và yêu cầu QA kiểm tra lại. |
+| Quy trình hiện tại (3–7 bước) | 1. Nhận thông báo Developer đã sửa bug.<br>2. Mở ticket hoặc bug report ban đầu.<br>3. Đọc thông tin sửa lỗi được cung cấp.<br>4. Nếu chưa rõ, hỏi Developer về nội dung và phạm vi sửa.<br>5. Xác định các trường hợp cần retest.<br>6. Thực hiện retest và cập nhật kết quả. |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 4: Làm rõ nội dung và phạm vi sửa lỗi. Theo thông tin ban đầu, mỗi lần retest có khoảng 2–3 trường hợp phải hỏi lại Developer, mất khoảng 10 phút xác nhận. |
+| Impact (nếu không giải thì sao) | Retest chậm, có thể kiểm tra thiếu trường hợp liên quan hoặc bỏ sót lỗi phát sinh sau khi sửa. |
+| Success metric (baseline → target) | Số lần phải hỏi lại Developer và thời gian xác nhận: baseline cần đo → mục tiêu giảm 50% số lần hỏi lại. |
+| Phương án không dùng AI | Chuẩn hóa mẫu thông báo sửa bug, yêu cầu Developer ghi rõ nguyên nhân, nội dung thay đổi và phạm vi ảnh hưởng. |
+| Giả thuyết về AI (nếu có) | AI có thể đọc bug report và nội dung sửa lỗi để đề xuất các khu vực, chức năng liên quan cần retest. |
+| Cảm nhận nhanh | Rule / Workflow |
 
 Quy trình nháp hiện tại:
 
-```text
+```
+HIỆN TẠI — ước tính 60–90'
+
+[1 Nhận thông báo Developer đã sửa bug: 2–3'] → [2 Mở ticket hoặc bug report ban đầu: 3–5'] → [3 Đọc thông tin sửa lỗi được cung cấp: 5–10'] → [4 Hỏi Developer về nội dung và phạm vi sửa: 15–20'] ← BOTTLENECK
+→ [5 Xác định các trường hợp cần retest: 5–7'] → [6 Thực hiện retest và cập nhật kết quả: 30–45']
 
 ```
 
 ### Card muốn pitch nhất
 
-- Card số:
-- Vì sao:
-- Câu hỏi muốn nhóm phản biện:
+**Card số:** 2 — Khó tái hiện bug xuất hiện ngẫu nhiên.
+**Vì sao:** Đây là vấn đề tôi gặp trong quá trình kiểm thử thực tế. Khi bug không xuất hiện ổn định, QA phải thử lại nhiều lần và thay đổi các điều kiện kiểm thử để tìm cách tái hiện. Việc này tốn thời gian, làm chậm quá trình xác minh bug và đôi khi khiến Developer thiếu thông tin để xử lý.
+**Câu hỏi muốn nhóm phản biện:** Có cách nào giúp QA xác định nhanh các điều kiện gây ra bug mà không phải thử quá nhiều trường hợp? Liệu vấn đề này có thực sự cần AI hay có thể giải quyết bằng cách ghi log và chuẩn hóa quy trình kiểm thử?
 
 ### AI đã phản biện card thế nào
 
 | Điểm yếu AI chỉ ra | Đồng ý? | Đã sửa gì |
 |---|---|---|
-| | | |
-
+| Actor chưa đủ cụ thể, chưa xác định rõ QA phụ trách loại game, chức năng hoặc công đoạn kiểm thử nào. | Đồng ý | Xác định rõ phạm vi công việc và vai trò của QA trong quy trình. |
+| Quy trình hiện tại chưa được xác thực bằng tình huống thực tế, có thể chỉ là quy trình giả định. | Đồng ý |Dẫn một vài bug cụ thể và ghi lại các bước xử lý thực tế khi gặp bug. |
 ---
 
 ## 4. Tôi đã tham gia phần nào (CP3 → CP7)
