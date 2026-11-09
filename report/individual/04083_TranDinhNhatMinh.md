@@ -133,7 +133,7 @@ flowchart LR
     A["1. Thực hiện thao tác kiểm thử<br/>10 phút"]
     B["2. Phát hiện bug<br/>5 phút"]
     C["3. Thử thực hiện lại các thao tác trước đó<br/>15 phút"]
-    D["4. Thay đổi điều kiện kiểm thử<br/>(Trạng thái game, thao tác, thời điểm hoặc dữ liệu)<br/>40 phút<br/><b>BOTTLENECK</b>"]
+    D["4. Thay đổi điều kiện kiểm thử<br/>(Trạng thái game, thao tác, thời điểm hoặc dữ liệu)<br/>40 phút<br/><b>⚠️BOTTLENECK</b>"]
     E["5. Ghi nhận kết quả từng lần thử<br/>10 phút"]
     F["6. Báo cáo bug nếu tái hiện được<br/>10 phút"]
 
