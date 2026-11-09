@@ -12,7 +12,7 @@
 
 | STT | Họ và tên | MSSV | Vai trò trong nhóm | Tài khoản GitHub |
 |---:|---|---|---|---|
-| 1 |Trần Đình Nhật  |2A202604083| |trandinhnhatminh1452 |
+| 1 |Trần Đình Nhật Minh |2A202604083| |trandinhnhatminh1452 |
 | 2 | | | | |
 | 3 | | | | |
 | 4 | | | | |
