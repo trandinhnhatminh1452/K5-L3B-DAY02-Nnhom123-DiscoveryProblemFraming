@@ -179,8 +179,10 @@ Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ ch
 
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?** Nếu được làm lại, tôi sẽ khảo sát kỹ hơn các nhân viên QA, thu thập dữ liệu để có baseline chính xác thay vì dựa vào ước tính. Tôi cũng sẽ thử nghiệm checklist và quy trình ghi nhận thông tin trước khi đề xuất AI. Khi phản biện nhóm, tôi sẽ tập trung nhiều hơn vào dữ liệu đầu vào và bằng chứng chứng minh giải pháp thực sự tốt hơn quy trình hiện tại.
 
-**6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
+**6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình. <br>
 Với bài tập của nhóm tôi, chúng tôi đang tập trung giải quyết vấn đề QA gặp khó khăn khi tái hiện những bug xuất hiện không ổn định trong quá trình kiểm thử game. Quy trình hiện tại là QA thực hiện thao tác, phát hiện bug, thử lại các thao tác trước đó, thay đổi điều kiện kiểm thử và ghi nhận kết quả, trong đó việc thử lại và tìm điều kiện gây lỗi là bottleneck. Về Boundary, AI chỉ được phép tổng hợp thông tin và đề xuất điều kiện kiểm thử, không tự kết luận nguyên nhân, thay đổi trạng thái game hay đóng bug. Nhóm chọn mức can thiệp Workflow, trong đó AI hỗ trợ tổng hợp lịch sử kiểm thử và gợi ý các bước tiếp theo. QA vẫn là người đánh giá đề xuất, lựa chọn điều kiện và xác nhận kết quả bằng kiểm thử thực tế. Cuối cùng, nhóm quyết định Not Yet, chưa triển khai rộng mà cần kiểm tra chất lượng log, thử nghiệm trên một số bug thực tế và đánh giá hiệu quả trước khi tiếp tục.
+
+
 ---
 
 ## 7. Tài liệu tham khảo
