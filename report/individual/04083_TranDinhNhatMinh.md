@@ -138,8 +138,8 @@ HIỆN TẠI — ước tính 60–90'
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
 | Pitch Problem Card |Trình bày 3 vấn đề liên quan đến công việc QA: tra cứu bug cũ, tái hiện bug ngẫu nhiên và làm rõ phạm vi sửa bug. |Có 3 candidate problem để nhóm xem xét và lựa chọn 1 trong  |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt:Dùng công cụ checklist thông thường có giải quyết được không?<br> Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không?  |Giúp hiểu hơn về vấn đề nhóm đang giải quyết, xem thử các phương án khác nhau và độ tối ưu của chúng |
+| Nhận phản biện | Câu hỏi tôi nhận được: Có chắc chắn bug cũ sẽ lặp lại ở phiên bản mới không?<br>Việc tái hiện phụ thuộc vào môi trường hay data?<br>Có cần thiết lập rule tự động mapping giữa bug và commit code không?|Tôi nhận ra không thể mặc định bug cũ sẽ xuất hiện lại ở phiên bản mới. Cần xem xét thêm sự khác biệt về phiên bản, môi trường và dữ liệu kiểm thử. Tôi cũng nhận thấy việc mapping bug với commit code chỉ nên là thông tin hỗ trợ, không phải điều kiện bắt buộc. Vì vậy, cần kiểm chứng tính cần thiết và độ tin cậy của dữ liệu trước khi đề xuất tự động hóa. |
 | Gom cluster / cây OST | | |
 | Chọn candidate problem | | |
 | Kiểm chứng / research | | |
