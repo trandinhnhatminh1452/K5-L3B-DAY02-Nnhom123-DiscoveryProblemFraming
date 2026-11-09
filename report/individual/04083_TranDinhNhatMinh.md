@@ -130,16 +130,20 @@ Quy trình nháp hiện tại:
 
 ```mermaid
 flowchart LR
-    A["1. Nhận thông báo Developer đã sửa bug<br/>2–3 phút"]
-    B["2. Mở ticket hoặc bug report ban đầu<br/>3–5 phút"]
-    C["3. Đọc thông tin sửa lỗi được cung cấp<br/>5–10 phút"]
-    D["4. Hỏi Developer về nội dung và phạm vi sửa<br/>15–20 phút<br/>BOTTLENECK"]
-    E["5. Xác định các trường hợp cần retest<br/>5–7 phút"]
-    F["6. Thực hiện retest và cập nhật kết quả<br/>30–45 phút"]
+    A["1. Thực hiện thao tác kiểm thử<br/>10 phút"]
+    B["2. Phát hiện bug<br/>5 phút"]
+    C["3. Thử thực hiện lại các thao tác trước đó<br/>15 phút"]
+    D["4. Thay đổi điều kiện kiểm thử<br/>(Trạng thái game, thao tác, thời điểm hoặc dữ liệu)<br/>40 phút<br/><b>BOTTLENECK</b>"]
+    E["5. Ghi nhận kết quả từng lần thử<br/>10 phút"]
+    F["6. Báo cáo bug nếu tái hiện được<br/>10 phút"]
 
     A --> B --> C --> D --> E --> F
 
-    style D fill:#ffcccc,stroke:#e53935,stroke-width:2px
+    classDef normal fill:#E8F1FC,stroke:#3973AC,color:#1F2937
+    classDef bottleneck fill:#FEE2E2,stroke:#DC2626,stroke-width:3px,color:#000000
+
+    class A,B,C,E,F normal
+    class D bottleneck
 ```
 
 ### Card muốn pitch nhất
