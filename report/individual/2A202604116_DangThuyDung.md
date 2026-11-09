@@ -7,11 +7,11 @@
 
 ## 1. Thông tin học viên
 
-- Họ tên: Trần Đình Nhật Minh
-- MSSV: 2A202604083
+- Họ tên: Đặng Thùy Dung
+- MSSV: 2A202604116
 - Email trường (không bắt buộc, repo có thể để public):
-- Tên nhóm:
-- Link repo nhóm:
+- Tên nhóm: Nnhom123
+- Link repo nhóm: 
 
 ---
 ## 2. Scan problem (CP1)
@@ -77,20 +77,7 @@ HIỆN TẠI — 150 phút/tuần
 | 2 |Khó tái hiện bug xuất hiện ngẫu nhiên(#2) |Tốn thời gian |Điều kiện xuất hiện không cố đinh, phải thử nhiều trường  |
 | 3 |Không rõ phạm vi sửa bug của Developer(#5) |Mất nhiều thời gian để xác nhận |Chưa biết thông tin nào thường bị thiếu khi Developer thông báo sửa bug. |
 
-### Problem Card #1
 
-| Trường | Nội dung |
-|---|---|
-| Job Story | Khi …, tôi muốn …, để … |
-| Actor | |
-| Thời điểm / bối cảnh | |
-| Quy trình hiện tại (3–7 bước) | |
-| Bottleneck (bước nào, mất bao nhiêu phút) | |
-| Impact (nếu không giải thì sao) | |
-| Success metric (baseline → target) | |
-| Phương án không dùng AI | |
-| Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | No AI / Rule / Workflow / Agent / Chưa biết |
 
 Quy trình nháp hiện tại:
 
@@ -102,16 +89,16 @@ Quy trình nháp hiện tại:
 
 | Trường | Nội dung |
 |---|---|
-| Job Story | Khi …, tôi muốn …, để … |
-| Actor | |
-| Thời điểm / bối cảnh | |
-| Quy trình hiện tại (3–7 bước) | |
-| Bottleneck (bước nào, mất bao nhiêu phút) | |
-| Impact (nếu không giải thì sao) | |
-| Success metric (baseline → target) | |
-| Phương án không dùng AI | |
-| Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | No AI / Rule / Workflow / Agent / Chưa biết |
+| Job Story | Khi nhân viên gửi lịch rảnh rải rác qua tin nhắn văn bản trên Zalo, tôi muốn tự động trích xuất lịch đăng ký vào bảng tổng hợp, để không phải đọc và chép tay từng dòng. |
+| Actor | Quản lý cửa hàng / Trưởng nhóm phụ trách ca trực |
+| Thời điểm / bối cảnh | Thứ Sáu – thứ Bảy khi nhân viên gửi lịch rảnh đăng ký ca |
+| Quy trình hiện tại (3–7 bước) | 1. Mở từng tin nhắn Zalo của 8–10 nhân viên (15') → 2. Đọc và dịch mong muốn/lịch học của từng người (15') → 3. Nhập tay từng ô vào bảng Excel (20') |
+| Bottleneck (bước nào, mất bao nhiêu phút) | **Bước 3: Nhập tay vào Excel** (mất 20 phút và dễ nhập sai thông tin). |
+| Impact (nếu không giải thì sao) | Tốn 50 phút/tuần; hay bị sót tin nhắn hoặc ghi sai ca rảnh của nhân viên. |
+| Success metric (baseline → target) | Baseline: **50 phút/tuần** → Target: **dưới 5 phút/tuần** (chỉ cần nhấn duyệt kiểm tra). |
+| Phương án không dùng AI | Ép nhân viên 100% phải điền đúng mẫu Google Form, không nhận tin nhắn rải rác. |
+| Giả thuyết về AI (nếu có) | Dùng AI LLM parsing dữ liệu tin nhắn tự do (vd: "Thứ 2 rảnh sáng, thứ 4 bận cả ngày") ra file JSON/Excel. |
+| Cảm nhận nhanh | Workflow |
 
 Quy trình nháp hiện tại:
 
@@ -119,21 +106,20 @@ Quy trình nháp hiện tại:
 
 ```
 
-### Problem Card #3
+# [Problem Card #3] 
 
 | Trường | Nội dung |
 |---|---|
-| Job Story | Khi …, tôi muốn …, để … |
-| Actor | |
-| Thời điểm / bối cảnh | |
-| Quy trình hiện tại (3–7 bước) | |
-| Bottleneck (bước nào, mất bao nhiêu phút) | |
-| Impact (nếu không giải thì sao) | |
-| Success metric (baseline → target) | |
-| Phương án không dùng AI | |
-| Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | No AI / Rule / Workflow / Agent / Chưa biết |
-
+| **Job Story** | Khi có nhân viên báo nghỉ đột xuất trước ca làm 2 tiếng, tôi muốn tự động tìm và gợi ý danh sách nhân viên rảnh đang đủ điều kiện, để không phải nhắn tin hỏi từng người trong nhóm. |
+| **Actor** | Quản lý ca trực, Nhân viên part-time |
+| **Thời điểm / bối cảnh** | Khi phát sinh sự cố xin nghỉ đột xuất trong tuần |
+| **Quy trình hiện tại (3–7 bước)** | 1. Nhận thông tin nghỉ (2') $\rightarrow$ 2. Mở file lịch tuần để lọc xem ai rảnh ca đó (10') $\rightarrow$ 3. Nhắn tin/gọi điện hỏi 3-4 ứng viên (20') $\rightarrow$ 4. Cập nhật lại lịch trực (5') |
+| **Bottleneck (bước nào, mất bao nhiêu phút)** | Bước 3: Nhắn tin/gọi điện hỏi từng người (mất 20 phút chờ phản hồi). |
+| **Impact (nếu không giải thì sao)** | Thiếu nhân sự trong ca làm, ảnh hưởng đến vận hành cửa hàng; quản lý mất thời gian điều phối gấp. |
+| **Success metric (baseline $\rightarrow$ target)** | Baseline: 37 phút/lần $\rightarrow$ Target: dưới 5 phút/lần. |
+| **Phương án không dùng AI** | Tạo bảng danh sách nhân viên rảnh cố định và quy định thứ tự gọi thay ca bằng Rule tự động gửi thông báo hàng loạt. |
+| **Giả thuyết về AI (nếu có)** | AI phân tích mức độ ưu tiên (số giờ đã làm trong tuần, khoảng cách di chuyển) để đề xuất 2 người tối ưu nhất. |
+| **Cảm nhận nhanh** | Rule |
 Quy trình nháp hiện tại:
 
 ```text
@@ -142,15 +128,19 @@ Quy trình nháp hiện tại:
 
 ### Card muốn pitch nhất
 
-- Card số:
-- Vì sao:
+- Card số: Card #1 (Tối ưu lịch làm part-time hằng tuần).
+- Vì sao: Đây là vấn đề có tác động lớn nhất (tốn 150 phút/tuần), quy trình lặp lại đều đặn, có chỉ số baseline rõ ràng và thể hiện rõ sự kết hợp giữa Rule logic và Workflow.
 - Câu hỏi muốn nhóm phản biện:
+  1. Bài toán ghép ca này chỉ cần dùng Google Sheets Constraint Solver (Rule) là đủ hay thật sự cần đến sự can thiệp của AI?
+  2. Thước đo giảm từ 150 phút xuống dưới 20 phút có khả thi không khi quản lý vẫn phải dành thời gian review lại lịch?
 
 ### AI đã phản biện card thế nào
 
 | Điểm yếu AI chỉ ra | Đồng ý? | Đã sửa gì |
 |---|---|---|
-| | | |
+| Baseline 150 phút chỉ là ước lượng tính nhẩm, chưa bấm giờ thực tế. | Đồng ý | Đã ghi chú cách đo: tính tổng thời gian từ lúc mở file gom Form đến lúc xuất bảng thông báo qua 2 tuần làm việc gần nhất. |
+| Bài toán ghép ca là toán tối ưu ràng buộc (Constraint Optimization), dùng AI sinh văn bản (LLM) dễ bị sai số ca/lịch bận. | Đồng ý | Chuyển mức độ can thiệp chính sang Rule/Workflow, AI chỉ hỗ trợ xử lý ngôn ngữ ở khâu đọc tin nhắn đầu vào (nếu có). |
+| Chưa có boundary rõ ràng, nếu AI/Hệ thống tự gửi lịch mà xếp sai thì ai chịu trách nhiệm? | Đồng ý | Thêm ranh giới (Boundary): Hệ thống chỉ xuất bản nháp gợi ý; Quản lý bắt buộc phải review và duyệt tay trước khi phát hành lịch. |
 
 ---
 
