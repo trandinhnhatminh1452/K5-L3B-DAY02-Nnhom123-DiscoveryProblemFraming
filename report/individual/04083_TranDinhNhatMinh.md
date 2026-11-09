@@ -60,7 +60,7 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 Quy trình nháp hiện tại:
 
 ```mermaid
-flowchart TD
+flowchart LR
     A["1. Nhận yêu cầu kiểm thử sự kiện<br/>5–10 phút"]
     B["2. Đọc tài liệu và checklist<br/>15–20 phút"]
     C["3. Tìm lại bug liên quan đến sự kiện ở các phiên bản trước<br/>30–45 phút"]
