@@ -1,4 +1,4 @@
-# Báo cáo cá nhân — MSSV_HoTen
+# Báo cáo cá nhân — 04083_TranDinhNhatMinh.md
 
 > Đổi tên file theo quy tắc `MSSV_HoTen.md`, ví dụ `20241234_NguyenVanAn.md` (MSSV trước, dấu `_`, họ tên viết liền không dấu). Sửa cả dòng tiêu đề phía trên cho khớp.
 > Template chi tiết và prompt mẫu cho từng mục: [docs/01-worksheet.md](../../docs/01-worksheet.md).
@@ -6,8 +6,8 @@
 
 ## 1. Thông tin học viên
 
-- Họ tên:
-- MSSV:
+- Họ tên: Trần Đình Nhật Minh
+- MSSV: 2A202604083
 - Email trường (không bắt buộc, repo có thể để public):
 - Tên nhóm:
 - Link repo nhóm:
@@ -20,14 +20,11 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | # | Lăng kính | Job Story: Khi… tôi muốn… để… | Ai chịu ảnh hưởng? | Dấu hiệu thật (thời gian, tần suất, số người, bằng chứng) |
 |---:|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
+| 1 |Lặp lại |Khi kiểm thử một sự kiện được mở hàng tháng trong game, tôi muốn tra cứu các bug từng xuất hiện ở những phiên bản trước, để tránh bỏ sót những lỗi tương tự. | QA Tester, QA Leader|1-2 tháng một lần, mỗi lần 4-6 tiếng |
+| 2 |Tốn thời gian |Khi phát hiện một bug chỉ xuất hiện trong điều kiện nhất định, tôi muốn xác định được điều kiện tái hiện lỗi, để không phải thử đi thử lại nhiều lần.|QA Tester, Developer |Mỗi lần thử mất khoảng 10p cho từng trường hợp, những bug nó chỉ diễn ra ngẫu nhiên trong một trường hợp cố định phải mất 15-20 phút để có thể tái  |
+| 3 |Tốn thời gian |Khi kiểm tra một checklist dài, tôi muốn biết chính xác những mục đã kiểm tra và chưa kiểm tra, để tránh mất thời gian rà soát lại nhiều lần. |QA Tester |Một checklist có khoảng 50–100 mục; mất thêm 10–15 phút rà soát trạng thái trước khi kết thúc kiểm thử. |
+| 4 |Cần đọc, tổng hợp nhiều thông tin |Khi nhận một tính năng mới để kiểm thử, tôi muốn nắm được các yêu cầu và thay đổi so với phiên bản trước, để xác định chính xác phạm vi cần kiểm tra. |QA Tester, Developer |mất khoảng 15–20 phút đọc khoảng các nguồn thông tin như tài liệu, ticket và trao đổi trong nhóm. |
+| 5 |Pain từ người khác |Khi Developer thông báo đã sửa bug, tôi muốn biết chính xác những nội dung đã thay đổi, để xác định các khu vực cần kiểm thử lại. |QA Tester, Developer |Mỗi lần thử lại có khoảng 2–3 trường hợp phải hỏi lại Developer về phạm vi sửa lỗi; mất khoảng 10 phút xác nhận. |
 
 **Nếu có dùng AI để gợi ý thêm:** ý nào AI gợi ý mà bạn giữ lại, ý nào bỏ và vì sao.
 
@@ -41,9 +38,9 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | Rank | Problem | Vì sao chọn | Điều còn chưa chắc |
 |---:|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 |Tra cứu bug cũ khi kiểm thử sự kiện hàng tháng(#1) |Quy trình rõ, tốn thời gian, lặp lại nhiều lần |Thời gian kiểm tra tùy vào từng bug, không cố  |
+| 2 |Khó tái hiện bug xuất hiện ngẫu nhiên(#2) |Tốn thời gian |Điều kiện xuất hiện không cố đinh, phải thử nhiều trường  |
+| 3 |Không rõ phạm vi sửa bug của Developer(#5) |Mất nhiều thời gian để xác nhận |Chưa biết thông tin nào thường bị thiếu khi Developer thông báo sửa bug. |
 
 ### Problem Card #1
 
