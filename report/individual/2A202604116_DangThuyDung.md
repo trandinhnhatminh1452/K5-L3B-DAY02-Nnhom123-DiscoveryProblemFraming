@@ -14,23 +14,57 @@
 - Link repo nhóm:
 
 ---
-
 ## 2. Scan problem (CP1)
 
 Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng hợp nhiều thông tin** · **Pain từ người khác**.
 
 | # | Lăng kính | Job Story: Khi… tôi muốn… để… | Ai chịu ảnh hưởng? | Dấu hiệu thật (thời gian, tần suất, số người, bằng chứng) |
 |---:|---|---|---|---|
-| 1 |Lặp lại |Khi kiểm thử một sự kiện được mở hàng tháng trong game, tôi muốn tra cứu các bug từng xuất hiện ở những phiên bản trước, để tránh bỏ sót những lỗi tương tự. | QA Tester, QA Leader|1-2 tháng một lần, mỗi lần 4-6 tiếng |
-| 2 |Tốn thời gian |Khi phát hiện một bug chỉ xuất hiện trong điều kiện nhất định, tôi muốn xác định được điều kiện tái hiện lỗi, để không phải thử đi thử lại nhiều lần.|QA Tester, Developer |Mỗi lần thử mất khoảng 10p cho từng trường hợp, những bug nó chỉ diễn ra ngẫu nhiên trong một trường hợp cố định phải mất 15-20 phút để có thể tái  |
-| 3 |Tốn thời gian |Khi kiểm tra một checklist dài, tôi muốn biết chính xác những mục đã kiểm tra và chưa kiểm tra, để tránh mất thời gian rà soát lại nhiều lần. |QA Tester |Một checklist có khoảng 50–100 mục; mất thêm 10–15 phút rà soát trạng thái trước khi kết thúc kiểm thử. |
-| 4 |Cần đọc, tổng hợp nhiều thông tin |Khi nhận một tính năng mới để kiểm thử, tôi muốn nắm được các yêu cầu và thay đổi so với phiên bản trước, để xác định chính xác phạm vi cần kiểm tra. |QA Tester, Developer |mất khoảng 15–20 phút đọc khoảng các nguồn thông tin như tài liệu, ticket và trao đổi trong nhóm. |
-| 5 |Pain từ người khác |Khi Developer thông báo đã sửa bug, tôi muốn biết chính xác những nội dung đã thay đổi, để xác định các khu vực cần kiểm thử lại. |QA Tester, Developer |Mỗi lần thử lại có khoảng 2–3 trường hợp phải hỏi lại Developer về phạm vi sửa lỗi; mất khoảng 10 phút xác nhận. |
+| 1 | **Lặp lại** | Khi đến thứ Bảy hằng tuần, tôi muốn chốt lịch ca trực cho 8–10 nhân viên part-time (với lịch rảnh rỗi và mong muốn làm việc thay đổi liên tục), để không phải mất 2-3 tiếng ghép lịch thủ công và xử lý khiếu nại chồng chéo. | Quản lý ca trực, 8–10 NV part-time | Mất 150–180 phút/tuần; trung bình 2–3 cuộc xin đổi ca/khiếu nại trùng lịch mỗi tuần. |
+| 2 | **Tốn thời gian** | Khi cần chốt ca trực gấp cho ngày hôm sau do có nhân viên nghỉ đột xuất, tôi muốn tìm nhanh nhân viên rảnh và đủ điều kiện ca, để không phải nhắn tin hỏi từng người. | Quản lý ca trực, NV part-time | Mất 30–45 phút nhắn tin/gọi điện hỏi từng người trong nhóm chat Zalo. |
+| 3 | **Cần đọc, tổng hợp nhiều thông tin** | Khi nhân viên gửi lịch rảnh bằng nhiều hình thức (tin nhắn text, ảnh chụp thời khóa biểu, voice note), tôi muốn tự động tổng hợp thành bảng dữ liệu, để không phải nhập tay từng dòng vào Excel. | Quản lý ca trực | Mất khoảng 40–50 phút đọc lại tin nhắn và điền tay vào file Excel theo dõi. |
+| 4 | **Tốn thời gian** | Khi cuối tháng tính lương, tôi muốn đối soát tổng số giờ làm thực tế của từng nhân viên với lịch đã phân công, để tránh sai sót khi phát lương. | Quản lý, Kế toán | Mất 60–90 phút mỗi cuối tháng rà soát lại sổ chấm công và bảng lịch cũ. |
+| 5 | **Pain từ người khác** | Khi nhân viên tự thỏa thuận đổi ca cho nhau, tôi muốn họ cập nhật đúng quy trình, để bảng lịch chung luôn đúng mà tôi không phải làm trung gian xác nhận nhiều lần. | Quản lý ca trực, NV part-time | Mỗi tuần có 3–4 lượt đổi ca qua lại; mất 15–20 phút/lần xác nhận và sửa file. |
 
-**Nếu có dùng AI để gợi ý thêm:** ý nào AI gợi ý mà bạn giữ lại, ý nào bỏ và vì sao.
+**Nếu có dùng AI để gợi ý thêm:** 
+* *Ý AI gợi ý giữ lại:* Ý #3 (tự động tổng hợp nguyện vọng từ tin nhắn tự do) vì đây là pain thực tế khi nhân viên không điền đúng form.
+* *Ý AI gợi ý bỏ:* Ý "tự động nhắn tin nhắc nhân viên đi làm đúng giờ" vì tính năng nhắn tin nhắc lịch có thể xử lý bằng Rule/bot tự động đơn giản, không cần dùng AI và không nằm ở khâu nghẽn xếp lịch.
 
--
+---
 
+## 3. Top 3 Problem Cards + quy trình nháp (CP2)
+
+### Bảng chọn top 3
+
+| Rank | Problem | Vì sao chọn | Điều còn chưa chắc |
+|---:|---|---|---|
+| 1 | **Tối ưu lịch làm part-time hằng tuần (#1)** | Quy trình lặp lại rõ ràng, tốn nhiều thời gian thử sai, có baseline đo đếm bằng phút cụ thể. | Làm sao để xử lý các ràng buộc phức tạp (ca gãy, giới hạn giờ/tuần) tự động? |
+| 2 | **Tổng hợp lịch rảnh từ tin nhắn tự do (#3)** | Giúp giảm bớt bước nhập liệu đầu vào, giảm tải cho quản lý. | Khả năng đọc chính xác hình ảnh thời khóa biểu hoặc voice note của AI. |
+| 3 | **Xử lý tìm người thay ca đột xuất (#2)** | Giải quyết pain khẩn cấp trong vận hành hằng ngày. | Nhân viên có sẵn sàng nhận ca gấp khi bot gửi thông báo không. |
+
+### Problem Card #1
+
+| Trường | Nội dung |
+|---|---|
+| Job Story | Khi đến thứ Bảy hằng tuần cần chốt lịch ca trực cho 8-10 nhân viên part-time (với lịch rảnh rỗi và mong muốn làm việc thay đổi liên tục), tôi muốn có một phương án sắp xếp ca làm tối ưu hóa nguyện vọng của nhân viên và yêu cầu vận hành, để không phải mất 2-3 tiếng ghép lịch thủ công và xử lý khiếu nại chồng chéo. |
+| Actor | Quản lý cửa hàng / Trưởng nhóm phụ trách ca trực |
+| Thời điểm / bối cảnh | Sáng thứ Bảy hằng tuần, trước buổi chốt lịch ca làm cho tuần tiếp theo |
+| Quy trình hiện tại (3–7 bước) | 1. Thu thập lịch rảnh qua Form/Zalo (30') → 2. Nhập liệu và tổng hợp nguyện vọng vào Excel (20') → 3. Thử sai & Ghép lịch thủ công (60') → 4. Kiểm tra xung đột & sót ca (25') → 5. Công bố & Điều chỉnh theo phản hồi (15') |
+| Bottleneck (bước nào, mất bao nhiêu phút) | **Bước 3: Thử sai & Ghép lịch thủ công** (mất 60 phút do rào cản chéo giữa số giờ tối đa/tuần, số người tối thiểu/ca, ca gãy, lịch học nhân viên). |
+| Impact (nếu không giải thì sao) | Mất 150–180 phút/tuần; 2–3 cuộc khiếu nại/xin đổi ca mỗi tuần do xếp trùng lịch bận; nguy cơ thiếu người giờ cao điểm. |
+| Success metric (baseline → target) | Baseline: **150 phút/tuần** → Target: **dưới 20 phút/tuần**; tỉ lệ ca bị khiếu nại trùng lịch bận giảm về 0%. |
+| Phương án không dùng AI | Google Form chuẩn hóa đầu vào + Google Sheets sử dụng công thức Constraint Solver (Rule-based) để tự động ghép ca theo bộ quy tắc logic cố định. |
+| Giả thuyết về AI (nếu có) | Dùng AI để trích xuất nguyện vọng từ tin nhắn text tự do trên Zalo/Messenger thành dữ liệu cấu trúc cho phần Rule xử lý ghép ca. |
+| Cảm nhận nhanh | Workflow |
+
+Quy trình nháp hiện tại:
+
+```text
+HIỆN TẠI — 150 phút/tuần
+
+[1. Thu thập lịch rảnh qua Form/Zalo: 30'] → [2. Nhập liệu vào Excel: 20']
+→ [3. Thử sai & Ghép lịch thủ công: 60'] ← BOTTLENECK
+→ [4. Kiểm tra xung đột & sót ca: 25'] → [5. Công bố & Điều chỉnh: 15']
 ---
 
 ## 3. Top 3 Problem Cards + quy trình nháp (CP2)
