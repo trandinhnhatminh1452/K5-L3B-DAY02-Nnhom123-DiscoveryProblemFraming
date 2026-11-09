@@ -137,16 +137,16 @@ HIỆN TẠI — ước tính 60–90'
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | | |
+| Pitch Problem Card |Trình bày 3 vấn đề liên quan đến công việc QA: tra cứu bug cũ, tái hiện bug ngẫu nhiên và làm rõ phạm vi sửa bug. |Có 3 candidate problem để nhóm xem xét và lựa chọn 1 trong  |
 | Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
 | Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
 | Gom cluster / cây OST | | |
 | Chọn candidate problem | | |
 | Kiểm chứng / research | | |
 | Quy trình nhóm | | |
-| Problem Statement | | |
-| Mức can thiệp AI | | |
-| Quyết định | | |
+| Problem Statement |Xây dựng Problem Statement v0 và cập nhật thành v1 |Làm rõ Actor, Impact, Success Metric, Boundary |
+| Mức can thiệp AI |So sánh No AI, Rule, Workflow và Agent; lựa chọn Workflow. | AI hỗ trợ tổng hợp lịch sử và đề xuất điều kiện kiểm thử, QA vẫn là người quyết định. |
+| Quyết định |Đánh giá 4 rủi ro Value, Usability, Feasibility và Viability. | Chọn Not Yet, cần kiểm chứng dữ liệu và thử nghiệm pilot trước khi triển khai. |
 
 ---
 
@@ -158,8 +158,8 @@ HIỆN TẠI — ước tính 60–90'
 | CP2 Problem Card | | | | |
 | CP4 Research | | | | |
 | CP5 Quy trình | | | | |
-| CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
+| CP5–6 Problem Statement | Hỗ trợ xác định Boundary, AI intervention point. | Giúp làm rõ vai trò của AI, con người và tiêu chí đánh giá. | Một số tiêu chí đo lường và khả năng triển khai chưa có bằng chứng xác thực. | Bổ sung cách đo thời gian tái hiện bug, yêu cầu QA xác nhận và xác định các giả định cần kiểm chứng. |
+| CP6 Mức can thiệp / quyết định | So sánh No AI, Rule, Workflow, Agent và đánh giá 4 rủi ro. | Giúp phân tích ưu, nhược điểm và lựa chọn mức can thiệp phù hợp. | Ban đầu đề xuất Agent có phần phức tạp so với dữ liệu hiện có. | Chọn Workflow, quyết định Not Yet và đặt ngưỡng dừng trước khi triển khai rộng. |
 
 ---
 
@@ -167,20 +167,20 @@ HIỆN TẠI — ước tính 60–90'
 
 Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ cho các câu 6.1–6.6 (không tính 6.7, câu này được chấm riêng ở tiêu chí C5). **Không dùng AI để viết thay.**
 
-**6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
+**6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**: Khi nghe các vấn đề của các bạn, tôi nhận ra mỗi người có những khó khăn và góc nhìn khác nhau. Có những vấn đề ban đầu tưởng chừng đơn giản nhưng lại ảnh hưởng đáng kể đến thời gian và hiệu quả công việc. Tôi học được rằng cần nhìn nhận vấn đề từ trải nghiệm thực tế, không nên vội đánh giá hay đề xuất giải pháp khi chưa hiểu rõ nguyên nhân.
 
-**6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+**6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?** Nhóm đã có bị xảy rả trường hợp solution-first, khi nghe đến vấn đề cần giải quyết thì có nhiều người liền đề xuất tự động hóa bằng AI, những đã có người phản bác và chỉ ra các phần còn thiếu và bottleneck trong việc áp dụng AI ngay lập tức. Nhóm đã cùng bàn bạc lại và quyết định tìm hiểu và phân tihcs quy trình và xem việc áp dụng AI để tự động hóa có khả thi không
 
-**6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
+**6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.** Ban đầu, tôi khá tập trung vào việc sử dụng AI để hỗ trợ QA tái hiện bug. Tuy nhiên, sau khi mọi người đưa ra ý kiến, tôi nhận ra chưa có baseline thực tế và chưa chứng minh được dữ liệu đủ tốt để AI phân tích. Vì vậy, tôi đã thay đổi quyết định AI chỉ đưa ra gợi ý, còn QA là người kiểm tra và quyết định.
 
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
 
-**6.5. Điều khó nhất khi viết Problem Statement là gì?**
+**6.5. Điều khó nhất khi viết Problem Statement là gì?** Khó nhất là xác định chính xác bottleneck và xây dựng Success Metric có thể đo lường được. Tôi chỉ biết việc tái hiện bug tốn nhiều thời gian nhưng chưa phân biệt được thời gian dành cho việc thử lại thao tác và thay đổi điều kiện kiểm thử. Ngoài ra, tôi cũng phải xác định rõ giới hạn của AI và vai trò kiểm soát của QA.
 
-**6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
+**6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?** Nếu được làm lại, tôi sẽ khảo sát kỹ hơn các nhân viên QA, thu thập dữ liệu để có baseline chính xác thay vì dựa vào ước tính. Tôi cũng sẽ thử nghiệm checklist và quy trình ghi nhận thông tin trước khi đề xuất AI. Khi phản biện nhóm, tôi sẽ tập trung nhiều hơn vào dữ liệu đầu vào và bằng chứng chứng minh giải pháp thực sự tốt hơn quy trình hiện tại.
 
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
-
+Với bài tập của nhóm tôi, chúng tôi đang tập trung giải quyết vấn đề QA gặp khó khăn khi tái hiện những bug xuất hiện không ổn định trong quá trình kiểm thử game. Quy trình hiện tại là QA thực hiện thao tác, phát hiện bug, thử lại các thao tác trước đó, thay đổi điều kiện kiểm thử và ghi nhận kết quả, trong đó việc thử lại và tìm điều kiện gây lỗi là bottleneck. Về Boundary, AI chỉ được phép tổng hợp thông tin và đề xuất điều kiện kiểm thử, không tự kết luận nguyên nhân, thay đổi trạng thái game hay đóng bug. Nhóm chọn mức can thiệp Workflow, trong đó AI hỗ trợ tổng hợp lịch sử kiểm thử và gợi ý các bước tiếp theo. QA vẫn là người đánh giá đề xuất, lựa chọn điều kiện và xác nhận kết quả bằng kiểm thử thực tế. Cuối cùng, nhóm quyết định Not Yet, chưa triển khai rộng mà cần kiểm tra chất lượng log, thử nghiệm trên một số bug thực tế và đánh giá hiệu quả trước khi tiếp tục.
 ---
 
 ## 7. Tài liệu tham khảo
