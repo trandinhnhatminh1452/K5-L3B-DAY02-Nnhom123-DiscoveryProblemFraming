@@ -37,20 +37,27 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 
 Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `HoVaTen-MSSV`.
 
-### HoVaTen-MSSV
+### Trần Đình Nhật Minh - [2A202604083]
 
 **Phần việc phụ trách:**
 
--
+- Đề xuất và phân tích các vấn đề liên quan đến công việc QA Tester.
+- Xây dựng Problem Card cho vấn đề bug xuất hiện không ổn định, khó tái hiện.
+- Xây dựng và điều chỉnh Problem Statement v0, v1 sau khi nhận phản biện.
+- Phân tích các mức can thiệp AI và đánh giá rủi ro của giải pháp.
 
-**Đóng góp cụ thể** (mình đã làm gì, ra sản phẩm gì):
+**Đóng góp cụ thể (mình đã làm gì, ra sản phẩm gì):**
 
--
+- Đề xuất 3 vấn đề trong công việc QA: tra cứu bug cũ, tái hiện bug ngẫu nhiên và xác định phạm vi sửa bug.
+- Phân tích quy trình tái hiện bug, xác định bottleneck, impact và success metric.
+- Điều chỉnh Problem Statement, bổ sung Boundary, AI intervention point và cách đo hiệu quả.
+- So sánh 4 mức can thiệp No AI, Rule, Workflow và Agent; đề xuất chọn Workflow.
+- Đánh giá 4 nhóm rủi ro Value, Usability, Feasibility và Viability, từ đó đưa ra quyết định Not Yet.
 
-**Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
+**Bằng chứng (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):**
 
--
+- `group_report.md`: phần CP5 — Problem Statement v0, CP6 — Mức can thiệp + Problem Statement v1, CP6 — Quyết định 
+- `report/assets/`: [Bổ sung tên file minh chứng thực tế nếu có].
 
-**Điều mình học được từ phần nhóm:**
-
--
+**Điều mình học được từ phần nhóm:** 
+Qua bài làm, tôi học được cách xác định vấn đề trước khi nghĩ đến giải pháp. Tôi nhận ra một ý tưởng sử dụng AI nghe có vẻ phù hợp nhưng vẫn cần được kiểm chứng về dữ liệu đầu vào, tính khả thi và hiệu quả thực tế. Ngoài ra, tôi hiểu rõ hơn cách xây dựng Problem Statement, xác định vai trò giữa AI và con người, cũng như lựa chọn mức can thiệp phù hợp thay vì cố gắng sử dụng AI ở mức phức tạp nhất.
