@@ -18,18 +18,12 @@
 
 | # | Người đưa ra | Candidate (Job Story ngắn) | Actor | Bottleneck | Câu hỏi phản biện nhận được (ai hỏi) |
 |---:|---|---|---|---|---|
-| 1 | Tôi | Khi kiểm thử sự kiện hàng tháng, tôi muốn tra cứu bug cũ để tránh bỏ sót lỗi tương tự. | QA Tester phụ trách kiểm thử sự kiện | Tìm kiếm và đối chiếu bug cũ. Chưa có số liệu đo riêng; tổng thời gian kiểm thử toàn bộ sự kiện khoảng 3–4 tiếng.  ||
-| 2 | Tôi | Khi phát hiện bug không xuất hiện ổn định, tôi muốn xác định điều kiện tái hiện để không phải thử đi thử lại nhiều lần. | QA Tester phát hiện và xác minh bug; Developer hỗ trợ phân tích. |  Thay đổi điều kiện kiểm thử. Một số bug khó tái hiện có thể mất 40 phút.  |  |
-| 3 | Tôi | Khi Developer thông báo sửa bug, tôi muốn biết rõ nội dung và phạm vi sửa để xác định các trường hợp cần retest. | QA Tester thực hiện retest; Developer phụ trách sửa bug. | Làm rõ nội dung và phạm vi sửa lỗi. Theo thông tin ban đầu, mỗi lần retest có khoảng 2–3 trường hợp phải hỏi lại Developer, mất khoảng 15-20 phút xác nhận. |  |
-| 4 | Dung | Khi kiểm tra một checklist dài, tôi muốn biết chính xác những mục đã kiểm tra và chưa kiểm tra, để tránh mất thời gian rà soát lại nhiều lần. | QA Tester | Mất thêm 10-15 phút rà soát trạng thái trước khi kết thúc kiểm thử | Dùng công cụ checklist thông thường có giải quyết được không? (Thành viên 2) |
-| 5 | Dung | Khi nhận một tính năng mới để kiểm thử, tôi muốn nắm được các yêu cầu và thay đổi so với phiên bản trước, để xác định chính xác phạm vi cần kiểm thử. | QA Tester, Developer | Mất khoảng 15-20 phút đọc nhiều nguồn thông tin (tài liệu, ticket, trao đổi nhóm) | Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không? (Thành viên 1) |
-| 6 | | | | | |
-| 7 | | | | | |
-| 8 | | | | | |
-| 9 | | | | | |
-| 10 | | | | | |
-| 11 | | | | | |
-| 12 | | | | | |
+| 1 | Tôi | Khi kiểm thử sự kiện hàng tháng, tôi muốn tra cứu bug cũ để tránh bỏ sót lỗi tương tự. | QA Tester phụ trách kiểm thử sự kiện | Tìm kiếm và đối chiếu bug cũ. Chưa có số liệu đo riêng; tổng thời gian kiểm thử toàn bộ sự kiện khoảng 3–4 tiếng.  | Có chắc chắn bug cũ sẽ lặp lại ở phiên bản mới không? (Dung)|
+| 2 | Tôi | Khi phát hiện bug không xuất hiện ổn định, tôi muốn xác định điều kiện tái hiện để không phải thử đi thử lại nhiều lần. | QA Tester phát hiện và xác minh bug; Developer hỗ trợ phân tích. |  Thay đổi điều kiện kiểm thử. Một số bug khó tái hiện có thể mất 40 phút.  | Việc tái hiện phụ thuộc vào môi trường hay data? (Dung)  |
+| 3 | Tôi | Khi Developer thông báo sửa bug, tôi muốn biết rõ nội dung và phạm vi sửa để xác định các trường hợp cần retest. | QA Tester thực hiện retest; Developer phụ trách sửa bug. | Làm rõ nội dung và phạm vi sửa lỗi. Theo thông tin ban đầu, mỗi lần retest có khoảng 2–3 trường hợp phải hỏi lại Developer, mất khoảng 15-20 phút xác nhận. | Có cần thiết lập rule tự động mapping giữa bug và commit code không? (Dung) |
+| 4 | Dung | Khi kiểm tra một checklist dài, tôi muốn biết chính xác những mục đã kiểm tra và chưa kiểm tra, để tránh mất thời gian rà soát lại nhiều lần. | QA Tester | Mất thêm 10-15 phút rà soát trạng thái trước khi kết thúc kiểm thử | Dùng công cụ checklist thông thường có giải quyết được không? (Minh) |
+| 5 | Dung | Khi nhận một tính năng mới để kiểm thử, tôi muốn nắm được các yêu cầu và thay đổi so với phiên bản trước, để xác định chính xác phạm vi cần kiểm thử. | QA Tester, Developer | Mất khoảng 15-20 phút đọc nhiều nguồn thông tin (tài liệu, ticket, trao đổi nhóm) | Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không? (Minh) |
+
 
 ### 2.2. Cluster
 
