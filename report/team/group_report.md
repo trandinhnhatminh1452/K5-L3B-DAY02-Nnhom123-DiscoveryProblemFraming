@@ -50,7 +50,7 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 ```text
 
----
+```
 ### 2.4. Chấm điểm shortlist (1–5)
 
 | Candidate | Actor rõ | Quy trình rõ | Pain có bằng chứng | Impact đo được | Vừa sức lab | So sánh được No AI/Rule/Workflow/Agent | Nhóm hiểu domain | Tổng |
@@ -73,53 +73,57 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 ---
 
-## 3. Kiểm chứng + research giải pháp đã có (CP4)
+## 3. Kiểm chứng + research giải pháp đã me (CP4)
 
 ### 3.1. Assumption Map
 
 | # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
 |---:|---|---|---:|---:|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| 1 | QA Tester và Developer thật sự gặp khó khăn và tốn trên 20 phút cho mỗi lần thử sai khi tái hiện bug ngẫu nhiên. | Value | 5 | 4 | ✅ |
+| 2 | Các yếu tố/tham số gây ra bug ngẫu nhiên (dữ liệu đầu vào, chuỗi thao tác, biến môi trường, log) có thể thu thập và ghi nhận lại được. | Feasibility | 5 | 2 | ✅ |
+| 3 | QA và Dev chấp nhận tin tưởng và thử nghiệm các kịch bản tái hiện do hệ thống/AI gợi ý thay vì tự tìm kiếm thủ công. | Usability | 4 | 2 | ✅ |
+| 4 | Thuật toán/AI có thể phát hiện đúng pattern (quy luật) xuất hiện lỗi từ tập dữ liệu log và tham số đầu vào. | Feasibility | 5 | 1 | ✅ |
+| 5 | Ban quản lý và đội ngũ bảo mật cho phép trích xuất log thao tác và dữ liệu kiểm thử để đưa vào công cụ phân tích. | Viability | 4 | 3 | — |
 
-*Điền 4–6 giả định; xóa dòng thừa.*
+*Điền 5 giả định quan trọng nhất.*
 
 Giả định nhóm kiểm chứng trong buổi này:
+- **Giả định #1 & #2:** Xác nhận thực tế thời gian lãng phí cho việc tái hiện bug ngẫu nhiên và khả năng gom dữ liệu/log tham số để phân tích.
+- **Giả định #4:** Kiểm chứng tính khả thi của việc dùng Rule/AI phân tích log để đưa ra gợi ý kịch bản tái hiện chuẩn xác.
 
 ### 3.2. Kiểm chứng
 
-Cách đã dùng: Phỏng vấn / Survey / Log, ticket, review
+Cách đã dùng: Phỏng vấn nhanh (The Mom Test) + Tra cứu thực tế từ Jira log & thảo luận cộng đồng QA.
 
-Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file trong `report/assets/cp4-interview-snapshot-N.md`):
+Interview snapshot:
 
 | Trường | Nội dung |
 |---|---|
-| Người được hỏi (vai trò, không ghi tên thật) | |
-| Câu nói đáng nhớ nhất (nguyên văn) | |
-| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | |
-| Hiện đang xử lý bằng cách nào (workaround)? | |
-| Mất bao lâu, bao lần? | |
-| Insight / opportunity rút ra | |
+| Người được hỏi (vai trò, không ghi tên thật) | Senior QA Tester (Game/Web Project, 2 năm kinh nghiệm) |
+| Câu nói đáng nhớ nhất (nguyên văn) | *"Bức bối nhất là bug ngẫu nhiên, Dev cứ bảo 'Bên máy tôi không sao' (Works on my machine) làm mình phải ngồi mò từng biến môi trường mất cả buổi."* |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | Trong đợt kiểm thử tính năng mua hàng (In-App Purchase), bug bị văng app chỉ xuất hiện khoảng 1/10 lần thử. Phải thử lại hơn 15 lần và đổi 3 thiết bị mới xác định được lỗi do mạng yếu kết hợp với bộ nhớ RAM đầy. |
+| Hiện đang xử lý bằng cách nào (workaround)? | Làm thủ công: vừa bấm vừa quay màn hình, tự mở file log đọc từng dòng, đổi từng thiết bị hoặc xóa cache ứng dụng để thử lại nhiều lần. |
+| Mất bao lâu, bao lần? | Tốn khoảng 30–45 phút cho mỗi bug ngẫu nhiên; trung bình 1–2 lần/tuần. |
+| Insight / opportunity rút ra | QA tốn nhiều thời gian nhất ở bước **thử sai các biến môi trường**. Nếu có công cụ tự gom log thao tác và phát hiện các biến đổi bất thường, QA chỉ cần kiểm tra 2-3 kịch bản nghi vấn thay vì mò mẫm từ đầu. |
 
 Tổng hợp:
 
 | Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
 |---|---:|---|---|
-| | | | |
+| Phỏng vấn ngắn (QA/Dev) | 2 | 2/2 người xác nhận bug ngẫu nhiên tốn thời gian nhất (trung bình 30-45p/lỗi); 100% phải quay màn hình hoặc soi log tay. | 1 người cho rằng bug do phần cứng thiết bị quá sâu thì AI/Rule cũng không bắt được logic. |
+| Tra cứu Ticket Jira/Log dự án cũ | 5 ticket bug ngẫu nhiên | 4/5 ticket thiếu thông tin bước tái hiện cụ thể lúc mới mở ticket, phải comment qua lại 3-4 lần giữa QA và Dev. | 1 ticket là do lỗi mạng chập chờn từ nhà cung cấp dịch vụ (dữ liệu ngoài hệ thống). |
 
 **Nhóm đã sửa problem thế nào sau kiểm chứng:**
+- **Thu hẹp phạm vi:** Không cố gắng giải quyết bài toán "tự động tái hiện mọi loại bug" (vì quá rộng và phụ thuộc phần cứng).
+- **Tập trung vào khâu nghẽn cốt lõi:** Chuyển thành bài toán **"Tự động tổng hợp chuỗi thao tác/log biến môi trường và đề xuất 2–3 kịch bản tái hiện nghi vấn nhất cho QA kiểm thử"**.
 
 ### 3.3. Research giải pháp đã có
 
 | Công cụ / case / pattern | Link | Giải bước nào trong quy trình? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| **Jam.dev / Flonnect (Developer Bug Capture)** | https://jam.dev/ | **Bước 1 & 2:** Tự động ghi nhận console log, network request, thiết bị, và thao tác màn hình ngay khi QA thấy lỗi. | Gom tự động 100% dữ liệu kỹ thuật và biến môi trường; tạo ticket kèm bằng chứng chi tiết chỉ bằng 1-click. | Chỉ ghi nhận được dữ liệu phiên chạy hiện tại (front-end/browser), không tự phân tích so sánh để tìm nguyên nhân gốc của tính ngẫu nhiên. | Rút ngắn khâu thu thập log; dữ liệu log cần được cấu trúc hóa để làm đầu vào cho bước phân tích pattern tiếp theo. |
+| **Sentry / Rollbar (Error Monitoring & Log Analysis)** | https://sentry.io/ | **Bước 2 & 3:** Phân tích stack trace, theo dõi tần suất lỗi ngẫu nhiên và nhóm (group) các lỗi có cùng nguyên nhân gốc. | Tự động phân loại lỗi ngẫu nhiên, chỉ ra chính xác dòng code và tham số gây crash trên backend/system. | Chi phí cao, lượng log khổng lồ dễ gây "nhiễu" (log noise); khó sử dụng cho QA nếu không có kỹ năng đọc sâu log code. | Cần cơ chế lọc (filter) để chỉ giữ lại các tham số thay đổi cốt lõi, tránh gây quá tải thông tin cho QA. |
+| **Pattern: Reproduction Test Builder (Prompt / Script)** | Case study: AI Pattern Book - Reproduction Test | **Bước 3 & 4:** Đưa log thao tác + biến môi trường vào prompt/script để gợi ý kịch bản tái hiện tối giản. | Đưa ra các bước nghi vấn cực kỳ cụ thể (1-2-3); giúp QA không phải thử lại 15–20 trường hợp ngẫu nhiên. | Nếu dữ liệu log đầu vào thiếu hoặc sai, AI sẽ gợi ý các bước tái hiện sai lệch (hallucination). | Áp dụng mô hình **Workflow**: dùng Rule/Script gom log chuẩn trước, sau đó mới dùng AI tóm tắt thành 2–3 kịch bản tái hiện cho QA duyệt và thử. |
 
 ---
 
@@ -131,7 +135,7 @@ Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
 
 ```text
 
-```
+
 
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú |
 |---:|---|---|---|---|---|
