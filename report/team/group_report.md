@@ -131,21 +131,28 @@ Tổng hợp:
 
 ### 4.1. Quy trình hiện tại
 
-Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
-
-```text
-
-
-
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú |
 |---:|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | QA Tester | Thao tác kiểm thử trên ứng dụng/game | Phát hiện bug xuất hiện không ổn định (ngẫu nhiên) | 5 phút / Mỗi khi gặp lỗi ngẫu nhiên | Lỗi chỉ xuất hiện 1/5 hoặc 1/10 lần thử. |
+| 2 | QA Tester | Phiên chạy ứng dụng vừa bị lỗi | File log thô, video/ảnh màn hình thao tác | 10 phút / Mỗi lần gặp bug | Phải mở nhiều công cụ (Console, Network Tab, Screen Recorder) để lấy log. |
+| 3 | QA Tester | File log thô, nghi vấn ban đầu | Danh sách các lần thử thất bại/thành công | **20 phút** / Mỗi lần gặp bug | **BOTTLENECK:** Phải liên tục thay đổi cấu hình thiết bị, xóa cache, đổi tài khoản, đổi mạng để dò tìm điều kiện. |
+| 4 | QA Tester | Kết quả sau nhiều lần thử sai | Các bước tái hiện (Reproduction Steps) nghi vấn | 7 phút / Mỗi lần gặp bug | Viết lại các bước vào nháp, đôi khi vẫn thiếu điều kiện ngầm (vd: RAM đầy). |
+| 5 | QA Tester | Các bước tái hiện nháp | Ticket bug trên Jira / Redmine | 3 phút / Mỗi lần gặp bug | Gửi ticket cho Developer để chờ xử lý. |
+
 
 **Bottleneck chính:**
+
+---
+
+### 4.2. Quy trình tương lai
+
+| Bước | Actor | Input | Output | Thời gian | Ghi chú / Mức can thiệp |
+|---:|---|---|---|---|---|
+| 1 | Hệ thống / Script | Phiên chạy ứng dụng bị lỗi | Gói dữ liệu log thô, network request, trạng thái thiết bị | 2 phút | **Rule/Script:** Tự động gom log và biến môi trường ngay khi gặp lỗi (tương tự công cụ Jam). |
+| 2 | Hệ thống AI | Gói dữ liệu log và tham số | Danh sách 2–3 kịch bản tái hiện nghi vấn nhất | 2 phút | **AI (Workflow):** Phân tích pattern, so sánh sự thay đổi tham số để khoanh vùng nguyên nhân. |
+| 3 | QA Tester | Kịch bản tái hiện từ hệ thống | Kết quả xác thực kịch bản đúng/sai | 8 phút | **Con người:** QA trực tiếp chạy thử kịch bản tối ưu thay vì mò mẫm từ đầu. |
+| 4 | Hệ thống | Kết quả xác thực của QA | Ticket bug hoàn chỉnh trên Jira | 3 phút | **Rule:** Tự động đính kèm log và các bước tái hiện chuẩn vào ticket. |
+
 
 ### 4.2. Quy trình tương lai
 
