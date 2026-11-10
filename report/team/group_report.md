@@ -154,12 +154,18 @@ Tổng hợp:
 | 4 | Hệ thống | Kết quả xác thực của QA | Ticket bug hoàn chỉnh trên Jira | 3 phút | **Rule:** Tự động đính kèm log và các bước tái hiện chuẩn vào ticket. |
 
 
-### 4.2. Quy trình tương lai
-
 Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người**, **boundary** ở đâu, **phương án quay về** khi AI sai.
 
 ```text
 
+TƯƠNG LAI — Khoảng 15 phút/lần (Mức can thiệp: Workflow có AI hỗ trợ)
+
+[Bước 1: Gom log & biến môi trường tự động: 2']   ← RULE / SCRIPT
+→ [Bước 2: Phân tích log & gợi ý kịch bản: 2']   ← AI
+→ [Bước 3: Chạy thử kịch bản & xác nhận: 8']      ← CON NGƯỜI
+→ [Bước 4: Cập nhật ticket Jira tự động: 3']     ← RULE
+
+```text
 ```
 
 ### 4.3. Before / after
