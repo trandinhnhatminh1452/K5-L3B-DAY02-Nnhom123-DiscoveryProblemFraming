@@ -34,8 +34,9 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 ## 3. Top 3 Problem Cards + quy trình nháp (CP2)
 
+ 
 ### Bảng chọn top 3
-
+ 
 | Rank | Problem | Vì sao chọn | Điều còn chưa chắc |
 |---:|---|---|---|
 | 1 | **Tối ưu lịch làm part-time hằng tuần (#1)** | Quy trình lặp lại rõ ràng, tốn nhiều thời gian thử sai, có baseline đo đếm bằng phút cụ thể. | Làm sao để xử lý các ràng buộc phức tạp (ca gãy, giới hạn giờ/tuần) tự động? |
@@ -89,6 +90,10 @@ HIỆN TẠI — 150 phút/tuần
 Quy trình nháp hiện tại:
 
 ```text
+HIỆN TẠI — 50 phút/tuần
+ 
+[1. Mở từng tin nhắn Zalo của 8–10 NV: 15'] → [2. Đọc và dịch mong muốn/lịch học: 15']
+→ [3. Nhập tay từng ô vào Excel: 20'] ← BOTTLENECK
 
 ```
 
@@ -106,10 +111,15 @@ Quy trình nháp hiện tại:
 | **Phương án không dùng AI** | Tạo bảng danh sách nhân viên rảnh cố định và quy định thứ tự gọi thay ca bằng Rule tự động gửi thông báo hàng loạt. |
 | **Giả thuyết về AI (nếu có)** | AI phân tích mức độ ưu tiên (số giờ đã làm trong tuần, khoảng cách di chuyển) để đề xuất 2 người tối ưu nhất. |
 | **Cảm nhận nhanh** | Rule |
+
 Quy trình nháp hiện tại:
 
 ```text
-
+HIỆN TẠI — 37 phút/lần
+ 
+[1. Nhận thông tin nghỉ: 2'] → [2. Lọc file lịch tuần xem ai rảnh: 10']
+→ [3. Nhắn tin/gọi điện hỏi 3–4 ứng viên: 20'] ← BOTTLENECK
+→ [4. Cập nhật lại lịch trực: 5']
 ```
 
 ### Card muốn pitch nhất
@@ -134,16 +144,16 @@ Quy trình nháp hiện tại:
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | | |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
-| Gom cluster / cây OST | | |
-| Chọn candidate problem | | |
-| Kiểm chứng / research | | |
-| Quy trình nhóm | | |
-| Problem Statement | | |
-| Mức can thiệp AI | | |
-| Quyết định | | |
+| Pitch Problem Card | Đề xuất 2 candidate trong buổi pitch nhóm: #4 (kiểm tra checklist dài, biết mục đã/chưa kiểm tra) và #5 (nắm yêu cầu, thay đổi của tính năng mới để xác định phạm vi test). | Hai candidate được đưa vào bảng pitch và xếp vào cluster A, C của nhóm; không vào shortlist cuối. [Dung bổ sung nếu có ảnh hưởng khác] |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: (1) Có chắc chắn bug cũ sẽ lặp lại ở phiên bản mới không? (2) Việc tái hiện phụ thuộc vào môi trường hay data? (3) Có cần thiết lập rule tự động mapping giữa bug và commit code không? | [Nhóm đã trả lời / điều chỉnh gì sau các câu hỏi này] |
+| Nhận phản biện | Câu hỏi tôi nhận được: "Dùng công cụ checklist thông thường có giải quyết được không?" (#4) và "Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không?" (#5), cả hai từ Minh. | Tôi đã sửa gì: [Dung điền] |
+| Gom cluster / cây OST | [Dung điền nếu có tham gia] | [Dung điền] |
+| Chọn candidate problem | [Dung điền nếu có tham gia] | [Dung điền] |
+| Kiểm chứng / research | Phỏng vấn QA (Senior QA Tester), tra cứu 5 ticket Jira bug ngẫu nhiên, research các công cụ Jam, Sentry/Rollbar, Crashlytics/Instabug và pattern Reproduction Test Builder. | Cho thấy tín hiệu ban đầu: 2/2 người xác nhận mất khoảng 30–45 phút/bug, 4/5 ticket thiếu bước tái hiện; nhóm thu hẹp bài toán về "gợi ý 2–3 kịch bản tái hiện". |
+| Quy trình nhóm | Tham gia vẽ quy trình hiện tại (5 bước, baseline 40 phút/bug) và quy trình tương lai (~20 phút/bug). | Xác định bottleneck là bước thử sai điều kiện kiểm thử. [Dung bổ sung phần cụ thể mình vẽ] |
+| Problem Statement | [Dung điền: phản biện v0/v1 ở điểm nào] | [Dung điền] |
+| Mức can thiệp AI | [Dung điền] | [Dung điền] |
+| Quyết định | [Dung điền] | [Dung điền] |
 
 ---
 
