@@ -144,16 +144,14 @@ HIỆN TẠI — 37 phút/lần
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | Đề xuất 2 candidate trong buổi pitch nhóm: #4 (kiểm tra checklist dài, biết mục đã/chưa kiểm tra) và #5 (nắm yêu cầu, thay đổi của tính năng mới để xác định phạm vi test). | Hai candidate được đưa vào bảng pitch và xếp vào cluster A, C của nhóm; không vào shortlist cuối. [Dung bổ sung nếu có ảnh hưởng khác] |
+| Pitch Problem Card | Đề xuất 2 candidate trong buổi pitch nhóm: #4 (kiểm tra checklist dài, biết mục đã/chưa kiểm tra) và #5 (nắm yêu cầu, thay đổi của tính năng mới để xác định phạm vi test). | Hai candidate được đưa vào bảng pitch và xếp vào cluster A, C của nhóm; không vào shortlist cuối. |
 | Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: (1) Có chắc chắn bug cũ sẽ lặp lại ở phiên bản mới không? (2) Việc tái hiện phụ thuộc vào môi trường hay data? (3) Có cần thiết lập rule tự động mapping giữa bug và commit code không? | [Nhóm đã trả lời / điều chỉnh gì sau các câu hỏi này] |
-| Nhận phản biện | Câu hỏi tôi nhận được: "Dùng công cụ checklist thông thường có giải quyết được không?" (#4) và "Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không?" (#5), cả hai từ Minh. | Tôi đã sửa gì: [Dung điền] |
-| Gom cluster / cây OST | [Dung điền nếu có tham gia] | [Dung điền] |
-| Chọn candidate problem | [Dung điền nếu có tham gia] | [Dung điền] |
+| Nhận phản biện | Câu hỏi tôi nhận được: "Dùng công cụ checklist thông thường có giải quyết được không?" (#4) và "Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không?" (#5), cả hai từ Minh. |  |
+| Gom cluster / cây OST | Trực tiếp nhóm các bài toán kiểm thử thành 3 Cluster (Tra cứu thông tin, Tái hiện lỗi, Đồng bộ giao tiếp); đóng góp ý kiến loại bỏ các solution đội lốt trong OST |  |
+| Chọn candidate problem |  |  |
 | Kiểm chứng / research | Phỏng vấn QA (Senior QA Tester), tra cứu 5 ticket Jira bug ngẫu nhiên, research các công cụ Jam, Sentry/Rollbar, Crashlytics/Instabug và pattern Reproduction Test Builder. | Cho thấy tín hiệu ban đầu: 2/2 người xác nhận mất khoảng 30–45 phút/bug, 4/5 ticket thiếu bước tái hiện; nhóm thu hẹp bài toán về "gợi ý 2–3 kịch bản tái hiện". |
 | Quy trình nhóm | Tham gia vẽ quy trình hiện tại (5 bước, baseline 40 phút/bug) và quy trình tương lai (~20 phút/bug). | Xác định bottleneck là bước thử sai điều kiện kiểm thử. [Dung bổ sung phần cụ thể mình vẽ] |
-| Problem Statement | [Dung điền: phản biện v0/v1 ở điểm nào] | [Dung điền] |
-| Mức can thiệp AI | [Dung điền] | [Dung điền] |
-| Quyết định | [Dung điền] | [Dung điền] |
+
 
 ---
 
