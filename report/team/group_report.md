@@ -47,8 +47,10 @@ OUTCOME: Giảm thời gian QA dành cho việc thử sai và xác định đi�
 Những ý đã gạch bỏ vì là solution đội lốt opportunity:
     "Công cụ tự động chạy mọi trường hợp test"    ← Solution, gạch khỏi tầng này
      "Chatbot AI tự sửa bug cho Developer"          ← Solution, gạch khỏi tầng này
--
 
+```text
+
+---
 ### 2.4. Chấm điểm shortlist (1–5)
 
 | Candidate | Actor rõ | Quy trình rõ | Pain có bằng chứng | Impact đo được | Vừa sức lab | So sánh được No AI/Rule/Workflow/Agent | Nhóm hiểu domain | Tổng |
