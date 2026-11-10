@@ -67,20 +67,6 @@ HIỆN TẠI — 150 phút/tuần
 → [4. Kiểm tra xung đột & sót ca: 25'] → [5. Công bố & Điều chỉnh: 15']
 ---
 
-## 3. Top 3 Problem Cards + quy trình nháp (CP2)
-
-### Bảng chọn top 3
-
-| Rank | Problem | Vì sao chọn | Điều còn chưa chắc |
-|---:|---|---|---|
-| 1 |Tra cứu bug cũ khi kiểm thử sự kiện hàng tháng(#1) |Quy trình rõ, tốn thời gian, lặp lại nhiều lần |Thời gian kiểm tra tùy vào từng bug, không cố  |
-| 2 |Khó tái hiện bug xuất hiện ngẫu nhiên(#2) |Tốn thời gian |Điều kiện xuất hiện không cố đinh, phải thử nhiều trường  |
-| 3 |Không rõ phạm vi sửa bug của Developer(#5) |Mất nhiều thời gian để xác nhận |Chưa biết thông tin nào thường bị thiếu khi Developer thông báo sửa bug. |
-
-
-
-Quy trình nháp hiện tại:
-
 ```text
 
 ```
