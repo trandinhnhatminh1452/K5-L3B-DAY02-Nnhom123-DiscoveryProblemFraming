@@ -18,35 +18,35 @@
 
 | # | Người đưa ra | Candidate (Job Story ngắn) | Actor | Bottleneck | Câu hỏi phản biện nhận được (ai hỏi) |
 |---:|---|---|---|---|---|
-| 1 | Minh | Khi kiểm thử sự kiện hàng tháng, tôi muốn tra cứu bug cũ để tránh bỏ sót lỗi tương tự. | QA Tester phụ trách kiểm thử sự kiện | Tìm kiếm và đối chiếu bug cũ. Chưa có số liệu đo riêng; tổng thời gian kiểm thử toàn bộ sự kiện khoảng 3–4 tiếng.  | Có chắc chắn bug cũ sẽ lặp lại ở phiên bản mới không? (Dung)|
-| 2 | Minh | Khi phát hiện bug không xuất hiện ổn định, tôi muốn xác định điều kiện tái hiện để không phải thử đi thử lại nhiều lần. | QA Tester phát hiện và xác minh bug; Developer hỗ trợ phân tích. |  Thay đổi điều kiện kiểm thử. Một số bug khó tái hiện có thể mất 40 phút.  | Việc tái hiện phụ thuộc vào môi trường hay data? (Dung)  |
-| 3 | Minh | Khi Developer thông báo sửa bug, tôi muốn biết rõ nội dung và phạm vi sửa để xác định các trường hợp cần retest. | QA Tester thực hiện retest; Developer phụ trách sửa bug. | Làm rõ nội dung và phạm vi sửa lỗi. Theo thông tin ban đầu, mỗi lần retest có khoảng 2–3 trường hợp phải hỏi lại Developer, mất khoảng 15-20 phút xác nhận. | Có cần thiết lập rule tự động mapping giữa bug và commit code không? (Dung) |
-| 4 | Dung | Khi kiểm tra một checklist dài, tôi muốn biết chính xác những mục đã kiểm tra và chưa kiểm tra, để tránh mất thời gian rà soát lại nhiều lần. | QA Tester | Mất thêm 10-15 phút rà soát trạng thái trước khi kết thúc kiểm thử | Dùng công cụ checklist thông thường có giải quyết được không? (Minh) |
-| 5 | Dung | Khi nhận một tính năng mới để kiểm thử, tôi muốn nắm được các yêu cầu và thay đổi so với phiên bản trước, để xác định chính xác phạm vi cần kiểm thử. | QA Tester, Developer | Mất khoảng 15-20 phút đọc nhiều nguồn thông tin (tài liệu, ticket, trao đổi nhóm) | Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không? (Minh) |
-
+| 1 | Minh | Khi kiểm thử sự kiện hàng tháng, tôi muốn tra cứu bug cũ để tránh bỏ sót lỗi tương tự. | QA Tester phụ trách kiểm thử sự kiện | Tìm kiếm và đối chiếu bug cũ. Chưa có số liệu đo riêng; tổng thời gian kiểm thử toàn bộ sự kiện khoảng 3–4 tiếng. | Có chắc chắn bug cũ sẽ lặp lại ở phiên bản mới không? (Dung) |
+| 2 | Minh | Khi phát hiện bug không xuất hiện ổn định, tôi muốn xác định điều kiện tái hiện để không phải thử đi thử lại nhiều lần. | QA Tester phát hiện và xác minh bug; Developer hỗ trợ phân tích. | Thay đổi điều kiện kiểm thử. Khoảng 30–45 phút/bug (baseline nhóm chốt: 40 phút). | Việc tái hiện phụ thuộc vào môi trường hay data? (Dung) |
+| 3 | Minh | Khi Developer thông báo sửa bug, tôi muốn biết rõ nội dung và phạm vi sửa để xác định các trường hợp cần retest. | QA Tester thực hiện retest; Developer phụ trách sửa bug. | Làm rõ nội dung và phạm vi sửa lỗi. Theo thông tin ban đầu, mỗi lần retest có khoảng 2–3 trường hợp phải hỏi lại Developer, mất khoảng 15–20 phút xác nhận. | Có cần thiết lập rule tự động mapping giữa bug và commit code không? (Dung) |
+| 4 | Dung | Khi kiểm tra một checklist dài, tôi muốn biết chính xác những mục đã kiểm tra và chưa kiểm tra, để tránh mất thời gian rà soát lại nhiều lần. | QA Tester | Mất thêm 10–15 phút rà soát trạng thái trước khi kết thúc kiểm thử | Dùng công cụ checklist thông thường có giải quyết được không? (Minh) |
+| 5 | Dung | Khi nhận một tính năng mới để kiểm thử, tôi muốn nắm được các yêu cầu và thay đổi so với phiên bản trước, để xác định chính xác phạm vi cần kiểm thử. | QA Tester, Developer | Mất khoảng 15–20 phút đọc nhiều nguồn thông tin (tài liệu, ticket, trao đổi nhóm) | Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không? (Minh) |
 
 ### 2.2. Cluster
 
-| Cluster | Các candidate | Pattern chung |
+|| Cluster | Các candidate | Pattern chung |
 |---|---|---|
-| **A | Tra cứu & Khám phá thông tin cũ** | Candidate #1 (Tra cứu bug cũ khi test sự kiện), Candidate #4 (Kiểm tra checklist/trạng thái test) | Đều liên quan đến việc rà soát, tìm kiếm lại thông tin/dữ liệu đã có từ trước (bug lịch sử, danh sách mục đã test). |
-| **B | Tái hiện & Phân tích lỗi** | Candidate #2 (Xác định điều kiện tái hiện bug ngẫu nhiên) | Liên quan đến việc xử lý các bài toán kỹ thuật phức tạp, tìm kiếm nguyên nhân, dấu vết (log) và điều kiện xảy ra lỗi thực tế. |
-| **C | Đồng bộ thông tin & Giao tiếp nhóm** | Candidate #3 (Xác định phạm vi sửa bug của Developer), Candidate #5 (Nắm bắt yêu cầu/thay đổi tính năng mới) | Đều xuất phát từ việc thông tin phân tán hoặc thiếu đồng bộ giữa QA và Developer, dẫn đến mất thời gian xác nhận. |
+| **A. Tra cứu & rà soát thông tin đã có** | Candidate #1 (Tra cứu bug cũ khi test sự kiện), Candidate #4 (Kiểm tra checklist/trạng thái test) | Đều là việc QA phải rà soát lại thông tin đã có từ trước (bug lịch sử, danh sách mục đã test) nên tốn thời gian. |
+| **B. Tái hiện & phân tích lỗi** | Candidate #2 (Xác định điều kiện tái hiện bug ngẫu nhiên) | Xử lý bài toán kỹ thuật phức tạp: tìm nguyên nhân, dấu vết (log) và điều kiện xảy ra lỗi thực tế. *(Cluster chỉ có 1 candidate, nên coi là "candidate đứng riêng".)* |
+| **C. Đồng bộ thông tin & Giao tiếp nhóm** | Candidate #3 (Xác định phạm vi sửa bug của Developer), Candidate #5 (Nắm bắt yêu cầu/thay đổi tính năng mới) | Đều xuất phát từ việc thông tin phân tán hoặc thiếu đồng bộ giữa QA và Developer, dẫn đến mất thời gian xác nhận. |
 
 ### 2.3. Opportunity Solution Tree rút gọn
 
 Gốc là **1 outcome**. Nhánh là **opportunity** (nhu cầu, pain), không phải tính năng hay công cụ.
 
 ```text
-OUTCOME: Giảm thời gian QA dành cho việc thử sai và xác định điều kiện tái hiện lỗi ngẫu nhiên
-├── Opportunity A: Điều kiện xảy ra bug ngẫu nhiên quá phức tạp và thiếu công cụ ghi nhận/phân tích log tự động (CHỌN)
-├── Opportunity B: Thông tin lỗi cũ và checklist trạng thái nằm rời rạc, khó tra cứu nhanh
-└── Opportunity C: Thiếu sự đồng bộ tức thời về phạm vi sửa lỗi và thay đổi yêu cầu giữa Dev và QA
-     
-
+OUTCOME: Giảm thời gian QA từ lúc gặp bug đến lúc Dev nhận được ticket đủ thông tin
+├── Opportunity A: QA không biết yếu tố nào (môi trường, thao tác, dữ liệu) gây ra bug
+│                  không ổn định, nên phải thử từng điều kiện một (CHỌN)
+├── Opportunity B: Thông tin lỗi cũ và trạng thái checklist nằm rời rạc, khó tra cứu nhanh
+└── Opportunity C: QA và Dev thiếu thông tin chung về phạm vi sửa lỗi và thay đổi yêu cầu
+ 
 Những ý đã gạch bỏ vì là solution đội lốt opportunity:
     "Công cụ tự động chạy mọi trường hợp test"    ← Solution, gạch khỏi tầng này
-     "Chatbot AI tự sửa bug cho Developer"          ← Solution, gạch khỏi tầng này
+    "Chatbot AI tự sửa bug cho Developer"          ← Solution, gạch khỏi tầng này
+    "Công cụ tự động ghi log và phân tích"          ← Solution, gạch khỏi tầng này
 
 ```text
 
@@ -58,18 +58,21 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 | **Candidate #2 (Tái hiện bug ngẫu nhiên)** | 5 | 4 | 5 | 4 | 4 | 5 | 5 | **32** |
 | **Candidate #3 (Phạm vi sửa bug của Dev)** | 5 | 4 | 4 | 4 | 5 | 4 | 5 | 31 |
 | **Candidate #1 (Tra cứu bug cũ khi test sự kiện)** | 4 | 4 | 4 | 4 | 4 | 4 | 5 | 29 |
-
+ 
+*Ghi chú điểm "Vừa sức lab" = 4 cho #2:* chỉ làm prototype với log mẫu, chưa tích hợp vào hệ thống thật. Chênh lệch #2 và #3 chỉ 1 điểm, nên điểm số không đủ để kết luận mạnh.
+ 
 **Candidate được chọn:** Candidate #2 (Khi phát hiện bug xuất hiện trong điều kiện ngẫu nhiên/không ổn định, tôi muốn xác định chính xác điều kiện tái hiện lỗi, để không phải thử đi thử lại nhiều lần).
-
-**Vì sao chọn:** 
-- Đây là pain point gây tốn thời gian và bức bối nhất cho QA/Dev (mất 15–40 phút/lần thử sai ngẫu nhiên).
-- Bài toán phân tích log, các biến môi trường và thao tác người dùng để tìm pattern lỗi rất phù hợp để so sánh rõ giữa Rule (lọc điều kiện cứng) và Workflow/AI (phân tích ngữ cảnh ngẫu nhiên), cực kỳ vừa sức trong thời lượng buổi lab.
-
-**Vì sao loại các candidate còn lại:** 
-- **Candidate #1:** Tần suất lặp lại thưa (1-2 tháng/lần), khó đo lường và kiểm chứng ngay hiệu quả trong thời gian ngắn.
-- **Candidate #3:** Tác động chủ yếu nằm ở khâu giao tiếp/quy trình giữa Dev và QA, mức độ can thiệp thiên nhiều về No AI hoặc Rule đơn giản (dùng form/checklist), ít thể hiện được độ phức tạp cần xử lý.
-
-**Xử lý bất đồng (nếu có):** Minh lo ngại Candidate #2 khó thực hiện do điều kiện ngẫu nhiên quá rộng. Nhóm đã thống nhất khoanh vùng bài toán: tập trung vào việc **gom log thao tác + phân tích sự biến đổi của các tham số**, từ đó gợi ý 2–3 kịch bản tái hiện nghi vấn nhất để QA thử nghiệm thay vì cố gắng tự động hóa toàn bộ.
+ 
+**Vì sao chọn:**
+- Pain có bằng chứng trực tiếp và lớn nhất: khoảng 30–45 phút/bug, baseline nhóm chốt là **40 phút**, so với 15–20 phút/lần của #3.
+- Có phỏng vấn kể lại một lần gặp lỗi cụ thể và có ticket Jira đối chiếu.
+- Có thể so sánh rõ giữa 4 mức (No AI / Rule / Workflow / Agent) trong thời lượng lab.
+**Vì sao loại các candidate còn lại:**
+- **Candidate #1:** Tần suất thưa (khoảng 1 lần/tháng), chưa có số liệu đo riêng, khó kiểm chứng hiệu quả trong thời gian ngắn.
+- **Candidate #3:** Là ứng viên sát điểm nhất (31 so với 32). Loại vì pain nhỏ hơn mỗi lần (15–20 phút) và chưa có phỏng vấn riêng. Giải pháp phù hợp cho #3 có thể là No AI/Rule đơn giản (template ticket), và đó **không phải lý do để loại**. Nếu pilot #2 không đạt (Not Yet), #3 là phương án dự phòng.
+- **Candidate #4, #5:** Không vào shortlist vì pain nhỏ hơn (10–20 phút) và chưa có bằng chứng ngoài ước lượng ban đầu *(nhóm xác nhận lại lý do này)*.
+**Xử lý bất đồng (nếu có):** Minh lo ngại Candidate #2 khó thực hiện do điều kiện ngẫu nhiên quá rộng. Nhóm thống nhất khoanh vùng: **gom log thao tác + phân tích sự biến đổi của các tham số**, từ đó gợi ý 2–3 kịch bản tái hiện nghi vấn nhất để QA thử, thay vì tự động hóa toàn bộ.
+ 
 
 ---
 
@@ -79,17 +82,17 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 | # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
 |---:|---|---|---:|---:|---|
-| 1 | QA Tester và Developer thật sự gặp khó khăn và tốn trên 20 phút cho mỗi lần thử sai khi tái hiện bug ngẫu nhiên. | Value | 5 | 4 | ✅ |
+| 1 | QA Tester và Developer thật sự mất khoảng 40 phút cho mỗi lần thử sai khi tái hiện bug ngẫu nhiên. | Value | 5 | 4 | — (đã có bằng chứng, chỉ cần xác nhận lại baseline) |
 | 2 | Các yếu tố/tham số gây ra bug ngẫu nhiên (dữ liệu đầu vào, chuỗi thao tác, biến môi trường, log) có thể thu thập và ghi nhận lại được. | Feasibility | 5 | 2 | ✅ |
 | 3 | QA và Dev chấp nhận tin tưởng và thử nghiệm các kịch bản tái hiện do hệ thống/AI gợi ý thay vì tự tìm kiếm thủ công. | Usability | 4 | 2 | ✅ |
 | 4 | Thuật toán/AI có thể phát hiện đúng pattern (quy luật) xuất hiện lỗi từ tập dữ liệu log và tham số đầu vào. | Feasibility | 5 | 1 | ✅ |
 | 5 | Ban quản lý và đội ngũ bảo mật cho phép trích xuất log thao tác và dữ liệu kiểm thử để đưa vào công cụ phân tích. | Viability | 4 | 3 | — |
+ 
+Giả định nhóm ưu tiên kiểm chứng (quan trọng cao nhưng bằng chứng thấp):
+- **Giả định #2:** Kiểm tra qua ticket Jira và log cũ xem thông tin môi trường, thao tác có được ghi nhận đủ không.
+- **Giả định #3:** Hỏi QA về mức sẵn sàng tin gợi ý của AI.
+- **Giả định #4:** Phỏng vấn và đọc ticket **không kiểm chứng được** giả định này. Cần thử với log mẫu thật nên chuyển sang kế hoạch ở mục 8.2.
 
-*Điền 5 giả định quan trọng nhất.*
-
-Giả định nhóm kiểm chứng trong buổi này:
-- **Giả định #1 & #2:** Xác nhận thực tế thời gian lãng phí cho việc tái hiện bug ngẫu nhiên và khả năng gom dữ liệu/log tham số để phân tích.
-- **Giả định #4:** Kiểm chứng tính khả thi của việc dùng Rule/AI phân tích log để đưa ra gợi ý kịch bản tái hiện chuẩn xác.
 
 ### 3.2. Kiểm chứng
 
@@ -113,6 +116,10 @@ Tổng hợp:
 | Phỏng vấn ngắn (QA/Dev) | 2 | 2/2 người xác nhận bug ngẫu nhiên tốn thời gian nhất (trung bình 30-45p/lỗi); 100% phải quay màn hình hoặc soi log tay. | 1 người cho rằng bug do phần cứng thiết bị quá sâu thì AI/Rule cũng không bắt được logic. |
 | Tra cứu Ticket Jira/Log dự án cũ | 5 ticket bug ngẫu nhiên | 4/5 ticket thiếu thông tin bước tái hiện cụ thể lúc mới mở ticket, phải comment qua lại 3-4 lần giữa QA và Dev. | 1 ticket là do lỗi mạng chập chờn từ nhà cung cấp dịch vụ (dữ liệu ngoài hệ thống). |
 
+**Lưu ý khi đọc bằng chứng:**
+- Cỡ mẫu nhỏ (2 người, 5 ticket) chỉ đủ nói là **có tín hiệu ban đầu**, chưa đủ để khẳng định.
+- Bằng chứng Jira (ticket thiếu thông tin, comment qua lại) cũng liên quan đến giao tiếp QA–Dev (Cluster C / Candidate #3). Nó ủng hộ #2 ở chỗ: ticket thiếu bước tái hiện **vì QA chưa tìm ra điều kiện**, nhưng nhóm cần xác nhận lại nguyên nhân này.
+
 **Nhóm đã sửa problem thế nào sau kiểm chứng:**
 - **Thu hẹp phạm vi:** Không cố gắng giải quyết bài toán "tự động tái hiện mọi loại bug" (vì quá rộng và phụ thuộc phần cứng).
 - **Tập trung vào khâu nghẽn cốt lõi:** Chuyển thành bài toán **"Tự động tổng hợp chuỗi thao tác/log biến môi trường và đề xuất 2–3 kịch bản tái hiện nghi vấn nhất cho QA kiểm thử"**.
@@ -121,9 +128,10 @@ Tổng hợp:
 
 | Công cụ / case / pattern | Link | Giải bước nào trong quy trình? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| **Jam.dev / Flonnect (Developer Bug Capture)** | https://jam.dev/ | **Bước 1 & 2:** Tự động ghi nhận console log, network request, thiết bị, và thao tác màn hình ngay khi QA thấy lỗi. | Gom tự động 100% dữ liệu kỹ thuật và biến môi trường; tạo ticket kèm bằng chứng chi tiết chỉ bằng 1-click. | Chỉ ghi nhận được dữ liệu phiên chạy hiện tại (front-end/browser), không tự phân tích so sánh để tìm nguyên nhân gốc của tính ngẫu nhiên. | Rút ngắn khâu thu thập log; dữ liệu log cần được cấu trúc hóa để làm đầu vào cho bước phân tích pattern tiếp theo. |
-| **Sentry / Rollbar (Error Monitoring & Log Analysis)** | https://sentry.io/ | **Bước 2 & 3:** Phân tích stack trace, theo dõi tần suất lỗi ngẫu nhiên và nhóm (group) các lỗi có cùng nguyên nhân gốc. | Tự động phân loại lỗi ngẫu nhiên, chỉ ra chính xác dòng code và tham số gây crash trên backend/system. | Chi phí cao, lượng log khổng lồ dễ gây "nhiễu" (log noise); khó sử dụng cho QA nếu không có kỹ năng đọc sâu log code. | Cần cơ chế lọc (filter) để chỉ giữ lại các tham số thay đổi cốt lõi, tránh gây quá tải thông tin cho QA. |
-| **Pattern: Reproduction Test Builder (Prompt / Script)** | Case study: AI Pattern Book - Reproduction Test | **Bước 3 & 4:** Đưa log thao tác + biến môi trường vào prompt/script để gợi ý kịch bản tái hiện tối giản. | Đưa ra các bước nghi vấn cực kỳ cụ thể (1-2-3); giúp QA không phải thử lại 15–20 trường hợp ngẫu nhiên. | Nếu dữ liệu log đầu vào thiếu hoặc sai, AI sẽ gợi ý các bước tái hiện sai lệch (hallucination). | Áp dụng mô hình **Workflow**: dùng Rule/Script gom log chuẩn trước, sau đó mới dùng AI tóm tắt thành 2–3 kịch bản tái hiện cho QA duyệt và thử. |
+| **Jam.dev (Developer Bug Capture)** | https://jam.dev/ | **Bước 1 & 2:** Ghi nhận console log, network request, thiết bị và thao tác màn hình ngay khi QA thấy lỗi. | Gom phần lớn dữ liệu kỹ thuật và biến môi trường; tạo ticket kèm bằng chứng chỉ bằng 1 click. | Chạy trên trình duyệt (web), chưa chắc phù hợp app mobile/game như ca phỏng vấn. Chỉ ghi nhận phiên hiện tại, không so sánh để tìm nguyên nhân gốc của tính ngẫu nhiên. | Rút ngắn khâu thu thập log; log cần được cấu trúc hóa để làm đầu vào cho bước phân tích pattern. |
+| **Firebase Crashlytics / Instabug (công cụ cho mobile/game)** | https://firebase.google.com/products/crashlytics , https://www.instabug.com/ | **Bước 2 & 3:** Thu thập crash report, thông tin thiết bị, breadcrumb trước khi lỗi. | Phù hợp hơn Jam cho app mobile. | *Nhóm tự kiểm tra lại tính năng và chi phí thực tế.* Thường chỉ ghi nhận lỗi đã xảy ra, chưa chắc gợi ý điều kiện tái hiện. | Xác định công cụ nào có thể làm nguồn log đầu vào cho bước 2 của quy trình tương lai. |
+| **Sentry / Rollbar (Error Monitoring & Log Analysis)** | https://sentry.io/ | **Bước 2 & 3:** Phân tích stack trace, theo dõi tần suất lỗi và nhóm (group) các lỗi có cùng nguyên nhân gốc. | Tự động phân loại lỗi, chỉ ra dòng code và tham số gây crash trên backend/system. | Có thể chi phí cao khi quy mô lớn; lượng log lớn dễ gây nhiễu; QA khó dùng nếu không đọc sâu được log code. Nhóm cần làm rõ vì sao các tính năng như breadcrumbs/session replay **chưa đủ** cho bài toán tái hiện. | Cần cơ chế lọc để chỉ giữ lại các tham số thay đổi cốt lõi, tránh quá tải thông tin cho QA. |
+| **Pattern: Reproduction Test Builder (Prompt / Script)** | *Chưa có link, nhóm bổ sung nguồn (AI Pattern Book) hoặc ghi rõ là pattern tự đề xuất* | **Bước 3 & 4:** Đưa log thao tác + biến môi trường vào prompt/script để gợi ý kịch bản tái hiện tối giản. | Đưa ra các bước nghi vấn cụ thể (1-2-3); có thể giúp QA không phải thử lại 15–20 trường hợp ngẫu nhiên. | Nếu log đầu vào thiếu hoặc sai, AI sẽ gợi ý sai lệch (hallucination). | Áp dụng mô hình **Workflow**: dùng Rule/Script gom log chuẩn trước, sau đó mới dùng AI tóm tắt thành 2–3 kịch bản cho QA duyệt và thử. |
 
 ---
 
@@ -131,39 +139,48 @@ Tổng hợp:
 
 ### 4.1. Quy trình hiện tại
 
+ 
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú |
 |---:|---|---|---|---|---|
 | 1 | QA Tester | Thao tác kiểm thử trên ứng dụng/game | Phát hiện bug xuất hiện không ổn định (ngẫu nhiên) | 5 phút / Mỗi khi gặp lỗi ngẫu nhiên | Lỗi chỉ xuất hiện 1/5 hoặc 1/10 lần thử. |
-| 2 | QA Tester | Phiên chạy ứng dụng vừa bị lỗi | File log thô, video/ảnh màn hình thao tác | 10 phút / Mỗi lần gặp bug | Phải mở nhiều công cụ (Console, Network Tab, Screen Recorder) để lấy log. |
-| 3 | QA Tester | File log thô, nghi vấn ban đầu | Danh sách các lần thử thất bại/thành công | **20 phút** / Mỗi lần gặp bug | **BOTTLENECK:** Phải liên tục thay đổi cấu hình thiết bị, xóa cache, đổi tài khoản, đổi mạng để dò tìm điều kiện. |
+| 2 | QA Tester | Phiên chạy ứng dụng vừa bị lỗi | File log thô, video/ảnh màn hình thao tác | 8 phút / Mỗi lần gặp bug | Phải mở nhiều công cụ (Console, Network Tab, Screen Recorder) để lấy log. |
+| 3 | QA Tester | File log thô, nghi vấn ban đầu | Danh sách các lần thử thất bại/thành công | **17 phút** / Mỗi lần gặp bug | **BOTTLENECK:** Phải liên tục thay đổi cấu hình thiết bị, xóa cache, đổi tài khoản, đổi mạng để dò tìm điều kiện. |
 | 4 | QA Tester | Kết quả sau nhiều lần thử sai | Các bước tái hiện (Reproduction Steps) nghi vấn | 7 phút / Mỗi lần gặp bug | Viết lại các bước vào nháp, đôi khi vẫn thiếu điều kiện ngầm (vd: RAM đầy). |
 | 5 | QA Tester | Các bước tái hiện nháp | Ticket bug trên Jira / Redmine | 3 phút / Mỗi lần gặp bug | Gửi ticket cho Developer để chờ xử lý. |
-
-
-**Bottleneck chính:**
+ 
+**Tổng: 40 phút/bug.**
+ 
+**Bottleneck chính:** Bước 3 (khoảng 17 phút, ~43% tổng thời gian). *Nguyên nhân giả định:* QA không có dữ liệu so sánh giữa lần lỗi và lần không lỗi, nên phải đổi từng điều kiện một. Cần xác nhận thêm bằng phỏng vấn.
 
 ---
 
 ### 4.2. Quy trình tương lai
 
+*Giả định chưa kiểm chứng: log và biến môi trường có thể gom tự động đầy đủ (xem rủi ro Feasibility ở mục 8.1).*
+ 
 | Bước | Actor | Input | Output | Thời gian | Ghi chú / Mức can thiệp |
 |---:|---|---|---|---|---|
-| 1 | Hệ thống / Script | Phiên chạy ứng dụng bị lỗi | Gói dữ liệu log thô, network request, trạng thái thiết bị | 2 phút | **Rule/Script:** Tự động gom log và biến môi trường ngay khi gặp lỗi (tương tự công cụ Jam). |
-| 2 | Hệ thống AI | Gói dữ liệu log và tham số | Danh sách 2–3 kịch bản tái hiện nghi vấn nhất | 2 phút | **AI (Workflow):** Phân tích pattern, so sánh sự thay đổi tham số để khoanh vùng nguyên nhân. |
-| 3 | QA Tester | Kịch bản tái hiện từ hệ thống | Kết quả xác thực kịch bản đúng/sai | 8 phút | **Con người:** QA trực tiếp chạy thử kịch bản tối ưu thay vì mò mẫm từ đầu. |
-| 4 | Hệ thống | Kết quả xác thực của QA | Ticket bug hoàn chỉnh trên Jira | 3 phút | **Rule:** Tự động đính kèm log và các bước tái hiện chuẩn vào ticket. |
+| 1 | QA Tester | Thao tác kiểm thử trên ứng dụng/game | Phát hiện bug xuất hiện không ổn định | 5 phút | **Con người:** giữ nguyên như hiện tại. |
+| 2 | Hệ thống / Script | Phiên chạy ứng dụng bị lỗi | Gói dữ liệu log thô, network request, trạng thái thiết bị | 2 phút | **Rule/Script:** Tự động gom log và biến môi trường ngay khi gặp lỗi (tương tự công cụ Jam). |
+| 3 | Hệ thống AI | Gói dữ liệu log và tham số | Danh sách 2–3 kịch bản tái hiện nghi vấn nhất | 2 phút | **AI (Workflow):** Phân tích pattern, so sánh sự thay đổi tham số để khoanh vùng nguyên nhân. |
+| 4 | QA Tester | Kịch bản tái hiện từ hệ thống | Kết quả xác thực kịch bản đúng/sai | 8 phút | **Con người:** QA trực tiếp chạy thử kịch bản thay vì mò mẫm từ đầu. |
+| 5 | Hệ thống | Kết quả xác thực của QA | Ticket bug hoàn chỉnh trên Jira | 3 phút | **Rule:** Tự động đính kèm log và các bước tái hiện chuẩn vào ticket. |
 
-
-Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người**, **boundary** ở đâu, **phương án quay về** khi AI sai.
+**Tổng kỳ vọng: 20 phút/bug.** Đây là mức lý tưởng; ngưỡng thành công của pilot là ≤ 28 phút (giảm 30% so với 40 phút).
+ 
+**Boundary:** Rule/Script lo thu thập và gắn ticket; AI chỉ đề xuất; QA là người chạy thử và quyết định.
+ 
+**Phương án quay về khi AI sai:** Nếu cả 2–3 kịch bản đều không tái hiện được bug, hoặc log thiếu, QA quay về cách thử thủ công như hiện tại (bước 3 của quy trình 4.1), vẫn dùng log do Script đã gom làm tham khảo.
 
 ```text
 
-TƯƠNG LAI — Khoảng 15 phút/lần (Mức can thiệp: Workflow có AI hỗ trợ)
-
-[Bước 1: Gom log & biến môi trường tự động: 2']   ← RULE / SCRIPT
-→ [Bước 2: Phân tích log & gợi ý kịch bản: 2']   ← AI
-→ [Bước 3: Chạy thử kịch bản & xác nhận: 8']      ← CON NGƯỜI
-→ [Bước 4: Cập nhật ticket Jira tự động: 3']     ← RULE
+TƯƠNG LAI — Khoảng 20 phút/lần (Mức can thiệp: Workflow có AI hỗ trợ)
+ 
+[Bước 1: QA phát hiện bug: 5']                      ← CON NGƯỜI
+→ [Bước 2: Gom log & biến môi trường tự động: 2']   ← RULE / SCRIPT
+→ [Bước 3: Phân tích log & gợi ý kịch bản: 2']      ← AI
+→ [Bước 4: Chạy thử kịch bản & xác nhận: 8']        ← CON NGƯỜI
+→ [Bước 5: Cập nhật ticket Jira tự động: 3']        ← RULE
 
 ```text
 ```
@@ -172,11 +189,11 @@ TƯƠNG LAI — Khoảng 15 phút/lần (Mức can thiệp: Workflow có AI hỗ
 
 | Chỉ số | Trước | Sau (kỳ vọng) | Ghi chú |
 |---|---:|---:|---|
-| Số bước | | | |
-| Tổng thời gian | | | |
-| Số bước thủ công | | | |
-| Bottleneck chính | | | |
-| Rủi ro mới phát sinh | | | |
+| Số bước | 5 | 5 | Bước 2 và 5 do Rule/Script, bước 3 do AI; bước phát hiện bug vẫn giữ để so sánh công bằng. |
+| Tổng thời gian | 40 phút | ~20 phút | Ước lượng từ 1 phỏng vấn; ngưỡng pilot ≤ 28 phút (giảm 30%). |
+| Số bước thủ công | 5 | 2 | Còn lại: phát hiện bug, chạy thử kịch bản. |
+| Bottleneck chính | Thử sai điều kiện (~17 phút) | Xác thực 2–3 kịch bản (~8 phút) | Chỉ đúng nếu gợi ý chính xác. |
+| Rủi ro mới phát sinh | – | Log thiếu, gợi ý sai, QA mất niềm tin, bảo mật log | Phương án lui: quay về cách thủ công / checklist. |
 
 ---
 
