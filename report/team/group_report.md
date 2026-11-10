@@ -29,40 +29,45 @@
 
 | Cluster | Các candidate | Pattern chung |
 |---|---|---|
-| A | | |
-| B | | |
-| C | | |
+| **A | Tra cứu & Khám phá thông tin cũ** | Candidate #1 (Tra cứu bug cũ khi test sự kiện), Candidate #4 (Kiểm tra checklist/trạng thái test) | Đều liên quan đến việc rà soát, tìm kiếm lại thông tin/dữ liệu đã có từ trước (bug lịch sử, danh sách mục đã test). |
+| **B | Tái hiện & Phân tích lỗi** | Candidate #2 (Xác định điều kiện tái hiện bug ngẫu nhiên) | Liên quan đến việc xử lý các bài toán kỹ thuật phức tạp, tìm kiếm nguyên nhân, dấu vết (log) và điều kiện xảy ra lỗi thực tế. |
+| **C | Đồng bộ thông tin & Giao tiếp nhóm** | Candidate #3 (Xác định phạm vi sửa bug của Developer), Candidate #5 (Nắm bắt yêu cầu/thay đổi tính năng mới) | Đều xuất phát từ việc thông tin phân tán hoặc thiếu đồng bộ giữa QA và Developer, dẫn đến mất thời gian xác nhận. |
 
 ### 2.3. Opportunity Solution Tree rút gọn
 
 Gốc là **1 outcome**. Nhánh là **opportunity** (nhu cầu, pain), không phải tính năng hay công cụ.
 
 ```text
-OUTCOME: 
-├── Opportunity A: 
-├── Opportunity B: 
-└── Opportunity C: 
-```
+OUTCOME: Giảm thời gian QA dành cho việc thử sai và xác định điều kiện tái hiện lỗi ngẫu nhiên
+├── Opportunity A: Điều kiện xảy ra bug ngẫu nhiên quá phức tạp và thiếu công cụ ghi nhận/phân tích log tự động (CHỌN)
+├── Opportunity B: Thông tin lỗi cũ và checklist trạng thái nằm rời rạc, khó tra cứu nhanh
+└── Opportunity C: Thiếu sự đồng bộ tức thời về phạm vi sửa lỗi và thay đổi yêu cầu giữa Dev và QA
+     
 
 Những ý đã gạch bỏ vì là solution đội lốt opportunity:
-
+    "Công cụ tự động chạy mọi trường hợp test"    ← Solution, gạch khỏi tầng này
+     "Chatbot AI tự sửa bug cho Developer"          ← Solution, gạch khỏi tầng này
 -
 
 ### 2.4. Chấm điểm shortlist (1–5)
 
 | Candidate | Actor rõ | Quy trình rõ | Pain có bằng chứng | Impact đo được | Vừa sức lab | So sánh được No AI/Rule/Workflow/Agent | Nhóm hiểu domain | Tổng |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| | | | | | | | | |
-| | | | | | | | | |
-| | | | | | | | | |
+| **Candidate #2 (Tái hiện bug ngẫu nhiên)** | 5 | 4 | 5 | 4 | 4 | 5 | 5 | **32** |
+| **Candidate #3 (Phạm vi sửa bug của Dev)** | 5 | 4 | 4 | 4 | 5 | 4 | 5 | 31 |
+| **Candidate #1 (Tra cứu bug cũ khi test sự kiện)** | 4 | 4 | 4 | 4 | 4 | 4 | 5 | 29 |
 
-**Candidate được chọn:**
+**Candidate được chọn:** Candidate #2 (Khi phát hiện bug xuất hiện trong điều kiện ngẫu nhiên/không ổn định, tôi muốn xác định chính xác điều kiện tái hiện lỗi, để không phải thử đi thử lại nhiều lần).
 
-**Vì sao chọn:**
+**Vì sao chọn:** 
+- Đây là pain point gây tốn thời gian và bức bối nhất cho QA/Dev (mất 15–40 phút/lần thử sai ngẫu nhiên).
+- Bài toán phân tích log, các biến môi trường và thao tác người dùng để tìm pattern lỗi rất phù hợp để so sánh rõ giữa Rule (lọc điều kiện cứng) và Workflow/AI (phân tích ngữ cảnh ngẫu nhiên), cực kỳ vừa sức trong thời lượng buổi lab.
 
-**Vì sao loại các candidate còn lại:**
+**Vì sao loại các candidate còn lại:** 
+- **Candidate #1:** Tần suất lặp lại thưa (1-2 tháng/lần), khó đo lường và kiểm chứng ngay hiệu quả trong thời gian ngắn.
+- **Candidate #3:** Tác động chủ yếu nằm ở khâu giao tiếp/quy trình giữa Dev và QA, mức độ can thiệp thiên nhiều về No AI hoặc Rule đơn giản (dùng form/checklist), ít thể hiện được độ phức tạp cần xử lý.
 
-**Xử lý bất đồng (nếu có):**
+**Xử lý bất đồng (nếu có):** Minh lo ngại Candidate #2 khó thực hiện do điều kiện ngẫu nhiên quá rộng. Nhóm đã thống nhất khoanh vùng bài toán: tập trung vào việc **gom log thao tác + phân tích sự biến đổi của các tham số**, từ đó gợi ý 2–3 kịch bản tái hiện nghi vấn nhất để QA thử nghiệm thay vì cố gắng tự động hóa toàn bộ.
 
 ---
 
