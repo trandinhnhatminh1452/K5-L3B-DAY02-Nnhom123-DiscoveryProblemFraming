@@ -5,17 +5,15 @@
 ## Thông tin nhóm
 
 - Tên nhóm: Nnhom123
-- Candidate problem nhóm chọn (1 câu):
-- Quyết định cuối (Go / Not Yet / No-Go):
+- Candidate problem nhóm chọn (1 câu): Khi phát hiện bug không xuất hiện ổn định, QA muốn xác định điều kiện tái hiện mà không phải thử đi thử lại nhiều lần.
+- Quyết định cuối (Go / Not Yet / No-Go):  Not Yet
 
 ## Thành viên
 
 | STT | Họ và tên | MSSV | Vai trò trong nhóm | Tài khoản GitHub |
 |---:|---|---|---|---|
-| 1 |Trần Đình Nhật Minh |2A202604083| |trandinhnhatminh1452 |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
+| 1 |Trần Đình Nhật Minh |2A202604083|Đề xuất candidate, vẽ quy trình, viết Problem Statement  |trandinhnhatminh1452 |
+| 2 |Đặng Thùy Dung | 2A202604116 |Phụ trách research và kiểm chứng (phỏng vấn, tra cứu Jira), vẽ quy trình, phản biện | dungdt1410 |
 
 Không ghi email hay số điện thoại vào bảng này, vì repo có thể để public.
 
@@ -25,13 +23,13 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 
 | Checkpoint | Người chính | Người hỗ trợ | Sản phẩm |
 |---|---|---|---|
-| CP3 — Hội tụ nhóm | | | Cluster, cây OST, bảng chấm điểm |
-| CP4 — Kiểm chứng | | | Assumption map, snapshot hoặc survey |
-| CP4 — Research | | | Bảng research có link |
-| CP5 — Quy trình trước/sau | | | Quy trình + bảng before/after |
-| CP5 — Problem Statement v0 | | | Problem Statement v0 |
-| CP6 — Mức can thiệp + Problem Statement v1 | | | Ma trận, AI Canvas, eval, Problem Statement v1 |
-| CP6 — Quyết định | | | 4 rủi ro + Go/Not Yet/No-Go |
+| CP3 — Hội tụ nhóm | Dung | Minh | Cluster, cây OST, bảng chấm điểm |
+| CP4 — Kiểm chứng | Dung | Minh | Assumption map, snapshot hoặc survey |
+| CP4 — Research | Dung | Minh | Bảng research có link |
+| CP5 — Quy trình trước/sau | Dung | Minh | Quy trình + bảng before/after |
+| CP5 — Problem Statement v0 | Minh | Dung | Problem Statement v0 |
+| CP6 — Mức can thiệp + Problem Statement v1 | Minh | Dung | Ma trận, AI Canvas, eval, Problem Statement v1 |
+| CP6 — Quyết định | Minh | Dung | 4 rủi ro + Go/Not Yet/No-Go |
 
 ## Cá nhân
 
@@ -61,3 +59,5 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 
 **Điều mình học được từ phần nhóm:** 
 Qua bài làm, tôi học được cách xác định vấn đề trước khi nghĩ đến giải pháp. Tôi nhận ra một ý tưởng sử dụng AI nghe có vẻ phù hợp nhưng vẫn cần được kiểm chứng về dữ liệu đầu vào, tính khả thi và hiệu quả thực tế. Ngoài ra, tôi hiểu rõ hơn cách xây dựng Problem Statement, xác định vai trò giữa AI và con người, cũng như lựa chọn mức can thiệp phù hợp thay vì cố gắng sử dụng AI ở mức phức tạp nhất.
+
+
