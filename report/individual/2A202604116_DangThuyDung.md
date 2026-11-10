@@ -150,7 +150,7 @@ HIỆN TẠI — 37 phút/lần
 | Gom cluster / cây OST | Trực tiếp nhóm các bài toán kiểm thử thành 3 Cluster (Tra cứu thông tin, Tái hiện lỗi, Đồng bộ giao tiếp); đóng góp ý kiến loại bỏ các solution đội lốt trong OST | Xây dựng thành công Opportunity Tree chuẩn hướng đến Outcome "Giảm thời gian thử sai khi tái hiện bug ngẫu nhiên".  |
 | Chọn candidate problem | Bỏ phiếu và bảo vệ phương án chọn Candidate #2 (Tái hiện bug ngẫu nhiên) làm đề tài chính cho bài tập nhóm. | Candidate #2 được nhóm chọn làm đòn bẩy chính với điểm shortlist cao nhất (32/40 điểm). |
 | Kiểm chứng / research | Phỏng vấn QA (Senior QA Tester), tra cứu 5 ticket Jira bug ngẫu nhiên, research các công cụ Jam, Sentry/Rollbar, Crashlytics/Instabug và pattern Reproduction Test Builder. | Cho thấy tín hiệu ban đầu: 2/2 người xác nhận mất khoảng 30–45 phút/bug, 4/5 ticket thiếu bước tái hiện; nhóm thu hẹp bài toán về "gợi ý 2–3 kịch bản tái hiện". |
-| Quy trình nhóm | Tham gia vẽ quy trình hiện tại (5 bước, baseline 40 phút/bug) và quy trình tương lai (~20 phút/bug). | Xác định bottleneck là bước thử sai điều kiện kiểm thử. [Dung bổ sung phần cụ thể mình vẽ] |
+| Quy trình nhóm | Tham gia vẽ quy trình hiện tại (5 bước, baseline 40 phút/bug) và quy trình tương lai (~20 phút/bug). | Xác định bottleneck là bước thử sai điều kiện kiểm thử|
 | Quyết định | Tham gia lập bảng đánh giá 4 rủi ro (Value, Usability, Feasibility, Viability) và thiết lập Stop Threshold cho Pilot 2 tuần | Nhóm chốt quyết địnH Not Yet |
 
 
