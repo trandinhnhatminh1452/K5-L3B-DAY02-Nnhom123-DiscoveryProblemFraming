@@ -148,9 +148,10 @@ HIỆN TẠI — 37 phút/lần
 | Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: (1) Có chắc chắn bug cũ sẽ lặp lại ở phiên bản mới không? (2) Việc tái hiện phụ thuộc vào môi trường hay data? (3) Có cần thiết lập rule tự động mapping giữa bug và commit code không? | [Nhóm đã trả lời / điều chỉnh gì sau các câu hỏi này] |
 | Nhận phản biện | Câu hỏi tôi nhận được: "Dùng công cụ checklist thông thường có giải quyết được không?" (#4) và "Thông tin phân tán ở nhiều nơi, AI đọc có bị sót ngữ cảnh không?" (#5), cả hai từ Minh. |  |
 | Gom cluster / cây OST | Trực tiếp nhóm các bài toán kiểm thử thành 3 Cluster (Tra cứu thông tin, Tái hiện lỗi, Đồng bộ giao tiếp); đóng góp ý kiến loại bỏ các solution đội lốt trong OST |  |
-| Chọn candidate problem |  |  |
+| Chọn candidate problem | Bỏ phiếu và bảo vệ phương án chọn Candidate #2 (Tái hiện bug ngẫu nhiên) làm đề tài chính cho bài tập nhóm. |  |
 | Kiểm chứng / research | Phỏng vấn QA (Senior QA Tester), tra cứu 5 ticket Jira bug ngẫu nhiên, research các công cụ Jam, Sentry/Rollbar, Crashlytics/Instabug và pattern Reproduction Test Builder. | Cho thấy tín hiệu ban đầu: 2/2 người xác nhận mất khoảng 30–45 phút/bug, 4/5 ticket thiếu bước tái hiện; nhóm thu hẹp bài toán về "gợi ý 2–3 kịch bản tái hiện". |
 | Quy trình nhóm | Tham gia vẽ quy trình hiện tại (5 bước, baseline 40 phút/bug) và quy trình tương lai (~20 phút/bug). | Xác định bottleneck là bước thử sai điều kiện kiểm thử. [Dung bổ sung phần cụ thể mình vẽ] |
+| Quyết định | Tham gia lập bảng đánh giá 4 rủi ro (Value, Usability, Feasibility, Viability) và thiết lập Stop Threshold cho Pilot 2 tuần | Nhóm chốt quyết địnH Not Yet |
 
 
 ---
@@ -159,12 +160,12 @@ HIỆN TẠI — 37 phút/lần
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
-| CP2 Problem Card | | | | |
-| CP4 Research | | | | |
-| CP5 Quy trình | | | | |
-| CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
+| CP1 Scan | Gợi ý thêm các lăng kính problem trong domain QA/Testing| Giúp mở rộng thêm các ý về đọc log và rà soát checklist |Gợi ý một số ý quá chung chung như "Trợ lý AI quản lý toàn bộ đợt kiểm thử" |Bỏ các ý không có quy trình cụ thể; chỉ giữ lại 5 problem thực tế có thời gian bấm giờ. |
+| CP2 Problem Card | Đóng vai QA Leader để phản biện Job Story và Bottleneck| Chỉ ra baseline 45 phút cần làm rõ nguyên nhân do thử sai môi trường hay dữ liệu |Gợi ý xây "Agent tự động chạy testcase thay QA" | Sửa cảm nhận nhanh thành Workflow, giữ boundary bắt buộc QA phải kiểm chứng trực tiếp |
+| CP4 Research |Tra cứu các giải pháp/công cụ tự động bắt log và phân tích bug | Tìm nhanh được các công cụ nổi tiếng như Jam.dev, Sentry, Rollbar| AI nói rằng Jam.dev có sẵn AI tự sửa code (thực tế Jam chỉ hỗ trợ ghi nhận log và capture) |Tự truy cập từng website công cụ để kiểm tra tính năng thực tế và viết lại bảng research chuẩn xác. |
+| CP5 Quy trình | Chuyển đổi mô tả quy trình thủ công và tương lai sang dạng sơ đồ ASCII / Mermaid |AI tự ý gộp bước 2 (AI phân tích) và bước 3 (QA test) thành 1 bước tự động |AI tự ý gộp bước 2 (AI phân tích) và bước 3 (QA test) thành 1 bước tự động |Tách làm 2 bước riêng biệt để làm rõ ranh giới con người kiểm duyệt (Human-in-the-loop). |
+| CP5–6 Problem Statement |Gợi ý cách viết Problem Statement v1 chuẩn khung chuẩn hóa |Cung cấp cấu trúc văn bản gọn gàng, đúng thuật ngữ môn học |Ban đầu AI bỏ qua chỉ số đánh giá độ chính xác (chỉ đo mỗi thời gian) | Thêm tiêu chí đánh giá (Eval): tỷ lệ gợi ý đúng kịch bản và tiêu chí "không bịa đặt tham số".|
+| CP6 Mức can thiệp / quyết định |Tư vấn các chỉ số kiểm thử Pilot và Stop Threshold | | | |
 
 ---
 
@@ -174,18 +175,32 @@ Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ ch
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
 
-**6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+Khi lắng nghe top 3 problems từ các bạn khác trong nhóm (bài toán báo cáo tuần từ Jira/Sheets của Minh và bài toán xếp lịch part-time), bài học lớn nhất tôi rút ra được là tầm quan trọng của việc có baseline thời gian và dấu hiệu thật. Nhiều bài toán nghe qua rất lớn, nhưng khi đi sâu vào quy trình thì lại thiếu số liệu đo đếm cụ thể.
 
+**6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+Nhóm tôi đã bị vấp phải lỗi "solution-first" ngay ở giai đoạn CP3 khi thảo luận về bài toán tái hiện bug ngẫu nhiên. Lúc đầu, các thành viên đều hào hứng đề xuất: "Hãy làm một Chatbot AI tự động tái hiện bug và sửa code luôn cho Developer". Nhóm nhận ra mình đang bị sa lầy vào giải pháp khi bắt đầu làm cây Opportunity Solution Tree (OST) và thấy nhánh này không thể đo lường được. Nhóm đã lập tức xử lý bằng cách gạch bỏ các câu từ mang tính công cụ (gạch câu "Chatbot AI...", "Công cụ tự động..."), quay lại phân tích đúng bản chất Opportunity: "Khâu nghẽn nhất nằm ở việc thử sai các biến môi trường mất 20 phút"
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
+
+Tôi đã thay đổi ý định hoàn toàn ở giai đoạn CP6 khi xác định mức độ can thiệp AI cho Candidate #2. Ban đầu, tôi bảo vệ quan điểm muốn chọn mức Agent (để AI tự động lấy dữ liệu, tự động chạy thử trên các trình duyệt ảo và xuất kết quả). Tuy nhiên, sau khi nhận phản biện từ nhóm về tính Feasibility (rủi ro AI tự suy đoán sai dẫn đến chạy lặp vô tận, tràn chi phí API) và Viability (bảo mật dữ liệu nội bộ), tôi đã đồng ý chuyển sang mức Workflow.
 
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
 
+Kết quả phỏng vấn 2 Senior QA và tra cứu 5 ticket Jira lỗi ngẫu nhiên làm tôi rất bất ngờ ở điểm:
+
+QA tốn thời gian không phải vì không biết đọc log, mà vì log thô quá nhiều "nhiễu" (log noise) và việc tái thiết lập môi trường (xóa cache, đổi mạng, đổi RAM) tốn quá nhiều thao tác thủ công.
+
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
+
+Điều khó nhất đối với tôi là việc tách biệt rõ ràng giữa Impact và Bottleneck, đồng thời đưa ra được một Boundary (Ranh giới an toàn) đủ chặt chẽ. Rất dễ bị nhầm lẫn giữa hậu quả chung (dự án trễ hạn) với điểm nghẽn thực sự của quy trình
 
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
 
+Nếu được làm lại từ đầu, tôi sẽ thực hiện bước nghiên cứu sản phẩm có sẵn (Research) sớm hơn, ngay ở giai đoạn CP2 thay vì đợi đến CP4. Việc research sớm sẽ giúp nhóm không bị tốn thời gian tranh luận về tính khả thi của việc lấy log.
+
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
 
+Nhóm chọn vấn đề QA Tester mất 40 phút cho mỗi bug ngẫu nhiên, trong đó bước thử sai điều kiện môi trường là khâu nghẽn tốn đến 17 phút. Quy trình hiện tại gồm 5 bước thủ công, từ bắt log đến dò dẫm thiết bị và lập ticket. Metric thành công cốt lõi là giảm tổng thời gian xử lý xuống < 28 phút. Để đảm bảo an toàn, Boundary bắt buộc AI chỉ đóng vai trò phân tích/đề xuất nháp, QA phải trực tiếp xác nhận chạy thử trên máy thật trước khi đẩy thông tin lên Jira.
+Quyết định cuối cùng là Not Yet: nhóm chưa đầu tư xây dựng ngay mà cần kiểm chứng dữ liệu log trước, sau đó thử pilot nhỏ trong 2 tuần (hoặc ≥ 10 bug). Nếu AI không giúp giảm ít nhất 30% thời gian tái hiện bug  hoặc QA thường xuyên phải bỏ qua đề xuất, nhóm quay về checklist và quy trình ghi nhận thủ công.
 ---
 
 ## 7. Tài liệu tham khảo
